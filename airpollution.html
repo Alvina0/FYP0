@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Title</title>
+
+  <link rel="stylesheet" href="main.css">
+  <link rel="stylesheet" href="my.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+</head>
+<body style=" background-color:#7C492E ;">
+  
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> <!-- Include jQuery -->
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script> <!-- Include Bootstrap JavaScript -->
+
+  <!-- Your custom JavaScript -->
+  <script type="module" src="login.js"></script>
+
+
+  <nav class="navbar navbar-expand-lg ">
+    <img src="logo.png" alt="logo" class="navbar-brand" style="width: 12%;" href="">
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span style="background-image: url('hamburgericon.png'); " class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="main.html">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="quiz.html">Quizzes</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="news.html">News</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="discussion.html">Discussion Forum</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="howtohelp.html">How to Help</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle"  id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Choose A Topic
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="risingsea.html">Rising Sea Levels</a>
+            <a class="dropdown-item" href="airpollution.html">Air Pollution</a>
+            <a class="dropdown-item" href="recycling.html">Recycling</a>
+
+          </div>
+        </li>
+      </ul>
+
+      <button id="loginSignupButton" class="btn btn-outline-light" onclick="document.getElementById('loginSignup').style.display='block'">Login / Sign up</button>
+
+      <div id="userProfile" class="nav-item dropdown">
+        <i class="fa fa-user profile-icon" style="font-size:35px;" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></i>
+        <div class="dropdown-menu" id="userProfileDropdown">
+            <a class="dropdown-item" href="#" id="logoutLink">Logout</a>
+            <a class="dropdown-item" href="settings.html">Settings</a>
+            <a class="dropdown-item" href="progresstracker.html">Progress Tracker</a>
+        </div>
+      </div>
+
+      </div>
+    </div>
+  </nav>
+
+  <div id="progressBar"></div>
+
+    <img src="air.png" alt="background" class="background">
+  </div>
+
+  
+    <div class="header3">
+      <div class="letter">
+        <img src="AA.png" alt="" />
+      </div>
+      <div class="letter">
+        <img src="i.png" alt="" />
+      </div>
+      <div class="letter">
+        <img src="r.png" alt="" />
+      </div>
+ 
+    </div>  
+    <div class="header4">
+      <div class="letter1">
+        <img src="pp.png" alt="" />
+      </div>
+      <div class="letter1">
+        <img src="o.png" alt="" />
+      </div>
+      <div class="letter1">
+        <img src="l.png" alt="" />
+      </div>
+      <div class="letter1">
+        <img src="l.png" alt="" />
+      </div>
+      <div class="letter1">
+        <img src="u.png" alt="" />
+      </div>
+      <div class="letter1">
+        <img src="t.png" alt="" />
+      </div>
+      <div class="letter1">
+        <img src="i.png" alt="" />
+      </div>
+      <div class="letter1">
+        <img src="o.png" alt="" />
+      </div>
+      <div class="letter1">
+        <img src="n.png" alt="" />
+      </div>
+    </div>
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/SplitText/3.0.1/SplitText.min.js"></script>
+    
+    <script src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+ 
+
+    <style>
+          .circle {
+        width: 45%;
+        height:  55%;
+        border-radius: 50%;
+        background-color: rgba(128, 92, 56, 0.61);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        flex-direction: column;
+        margin-left: 5%;
+        font-size: 20px;
+        color: white;
+    }
+
+
+
+    .circle h3 {
+        margin: 0;
+        margin-bottom: 5%;
+    }
+    </style>
+    <div class="website-content">
+      <div class="readingsec">
+        <div class="parallax7" style="height: 100px;">      
+<br>
+        <div style=" background-color:rgba(128, 92, 56, 0.61); height: 40%;" class="parallax-content" >
+          <h2>
+            <input type="checkbox" id="airPollutionContentRead1" name="airPollutionContentRead">
+          
+          Introduction to Air Pollution
+        </h2>
+        <br>    
+
+      </div>
+
+    </div>
+        <div style="height: 800px;" class="parallax7">
+          <div style="margin-left:30%;" class="circle">
+            <h3>What is Air Pollution?</h3>
+            <p>
+            Air pollution occurs when solid and liquid particles, known as aerosols, and certain gases contaminate the air we breathe. These pollutants can have detrimental effects on both the environment and human health, underscoring the importance of monitoring and addressing air quality issues.
+          </p>
+
+
+    
+          </div>
+          <div style="display: flex; justify-content: center; height: 50%; width: 100%;">
+            <div style="margin-right: 20px; transform: translate(50%, -50%)" class="circle">
+              <p>Vehicle exhaust from cars, trucks, and buses
+              </p>
+            </div>
+            <div style="margin-right: 20px;" class="circle">
+              <p>
+              Smoke emissions from industrial facilities and power plants
+              </p>
+            </div>
+            <div style="margin-right: 20px;" class="circle">
+              <p>Burning of fossil fuels for heating and cooking
+              </p>
+            </div>
+            <div style="transform: translate(-50%, -50%); margin-right: 20px;" class="circle">
+              <p>Smoking tobacco products indoors and outdoors
+              </p>
+            </div>
+
+          </div>
+          </div>
+          
+
+
+        <br><br><br><br>
+
+       
+        <div style="height: 150px;" class="parallax8">
+          <br>
+          <div style="height: 100px;     background-color: rgba(128, 92, 56, 0.61);"  class="parallax-content2" >
+            <input type="checkbox" id="airPollutionContentRead2" name="airPollutionContentRead">
+
+            <h2>The main gasses:</h2>
+
+        </div>
+
+          
+          </div>
+        <div style="height: 1450px;" class="parallax8">
+          <div>
+
+            <div  style="height: 80%; width: 50%; float: right; margin-right: 2%;" class="circle">
+
+                <h3>
+                  <h4>Carbon Monoxide (CO):
+                  </h4>
+                  <p style="width: 65%;">
+                    Produced by incomplete combustion of fossil fuels in vehicles, industrial processes, and heating systems using coal or wood.                  </p>
+                  <h4>Sulfur Dioxide (SO2): 
+                  </h4>
+                  <p style="width: 65%;">
+                    Generated by burning fossil fuels containing sulfur, such as coal and oil, in power plants, industrial facilities, and vehicles.
+                  </p>
+                  <h4>Nitrogen Oxides (NOx):
+                  </h4>
+                  <p style="width: 65%;">
+                    Formed during combustion at high temperatures in vehicles, power plants, and industrial processes, particularly from burning fossil fuels.
+                  </p>
+            </div>
+            <div style="margin-left: 25%; height: 140%; width: 40%;" class="circle">
+              <h4> Volatile Organic
+                <br>
+                 Compounds
+                 (VOCs):</h4>
+              <p style="width: 66%;">
+                Released from various sources, including vehicle exhaust, industrial processes, solvents, paints, and household products like cleaners and disinfectants.
+              </p>               
+               <h4> Particulate Matter (PM): </h4>
+              <p style="width: 60%;">
+                Consists of tiny particles suspended in the air, including dust, soot, and aerosols, emitted from vehicle exhaust, industrial activities, construction sites, and wildfires.
+              </p>   
+            </div>
+            <div style=" height: 200%; width: 40%; float: left;" class="circle">
+                <h4>  Ozone (O3):</h4>
+                <p style="width: 65%;">
+                  Ground-level ozone forms through complex chemical reactions involving NOx and VOCs in the presence of sunlight, commonly found in urban areas with high traffic and industrial activity.
+                </p>
+                <h4> Methane (CH4):</h4>
+                <p style="width: 65%;">
+                  A potent greenhouse gas emitted from sources like landfills, agricultural activities (e.g., livestock digestion), natural gas production, and wetlands.
+                </p>
+                </div>
+        </div>
+        </div>
+
+
+        <br><br><br><br>
+
+        <div style="height: 1300px;line-height: 1.9; " class="parallax9">
+          <div>
+            <div  style="height: 90%; width: 40%;" class="circle">
+
+                <h3>
+                  <input type="checkbox" id="airPollutionContentRead3" name="airPollutionContentRead">
+                  Aerosols:</h3>
+                <p style="width: 80%;">
+                    Aerosols exert a complex influence on Earth's climate by affecting the balance of incoming solar radiation. While some aerosols reflect sunlight back into space, cooling the planet, others absorb sunlight, contributing to warming trends. This interplay underscores the intricate relationship between air pollution and global climate patterns.
+                </p>
+            </div>
+            <div style="margin-left: 25%; height: 9%; width: 40%;" class="circle">
+                <h3>Effects on
+                  <br> Human Health:</h3>
+                <p style="width: 75%;">Exposure to polluted air has significant health implications, with long-term effects including respiratory diseases, cardiovascular disorders, cancer, and overall reduced quality of life. Monitoring and mitigating air pollution are crucial for safeguarding public health and well-being.</p>
+            </div>
+            <div style="margin-left: 50%; height: 90%; width: 40%;" class="circle">
+                <h3>Importance of
+                  <br> Air Quality Monitoring:</h3>
+                <p style="width: 75%;">Given the adverse effects of air pollution on both the environment and human health, continuous monitoring of air quality is essential. By tracking pollutant levels and implementing measures to reduce emissions, policymakers and communities can work towards improving air quality and protecting public health.</p>
+            </div>
+        </div>
+        
+        </div>
+
+
+        <div style="height: 400px;" class="parallax9">
+        
+          <h4>
+            
+            <div style="height: 300px; background-color: rgba(128, 92, 56, 0.61);" class="parallax-content3" >
+
+            <h4>
+              To Summarise...
+
+            </h4>
+            <br>
+            Air pollution is caused by a variety of sources, including solid and liquid particles, known as aerosols, and certain gases. These pollutants come from sources like car and truck exhaust, industrial emissions, natural events like wildfires and volcanoes, as well as chemical reactions in the atmosphere. Aerosols can be formed from burning fossil fuels and other activities, while gases like ozone contribute to pollution, especially in urban areas where they form smog. Air pollution has significant impacts on both human health and the environment, including respiratory diseases, cardiovascular issues, and climate change.Public awareness and education are crucial in addressing air pollution by encouraging individuals and communities to adopt cleaner practices and advocate for environmental protection measures.          
+          
+        </div>
+
+        </div>
+
+
+
+
+        
+
+        <br><br><br><br>
+
+        <h3 style="color:beige; text-align: center;">
+          Learn better with visuals? 
+          <br>
+          Watch the videos below!
+        </h3>
+        <br><br><br>
+
+      </div>
+
+      <div class="video-container">
+        <div class="video-content">
+          <input type="checkbox" id="airPollutionVideosWatched1" name="airPollutionVideosWatched">
+          <label for="myCheckbox" style="color: beige;">Watched</label>
+          <h5 style="color: beige;">Monitoring Air Pollution!</h5>
+          <iframe width="380" height="200" src="https://www.youtube.com/embed/qkY5oFQD2cc?si=jMRIwYHrXHkRPJUc" title="YouTube video player"></iframe>    
+        </div>
+        <div class="video-content">
+          <input type="checkbox" id="airPollutionVideosWatched2" name="airPollutionVideosWatched">
+          <label for="myCheckbox" style="color: beige;">Watched</label>
+        <h5 style="color: beige;">Experiment Time!</h5>
+        <iframe width="380" height="200" src="https://www.youtube.com/embed/lPNYdSZRSdg?si=stm658wfIHkD_Gw3" title="YouTube video player"></iframe>    
+        </div>
+        <div class="video-content">
+          <input type="checkbox" id="airPollutionVideosWatched3" name="airPollutionVideosWatched">
+          <label for="myCheckbox" style="color: beige;">Watched</label>
+          <h5 style="color: beige;" >What is Aerosol??</h5>
+          <iframe width="380" height="200" src="https://www.youtube.com/embed/4eh6IKahbok?si=SPzhkUeg9wwvLhii" title="YouTube video player"></iframe>    
+          </div>
+          
+      </div>   
+       <div class="video-container">
+        <div class="video-content">
+          <input type="checkbox" id="airPollutionVideosWatched4" name="airPollutionVideosWatched">
+          <label for="myCheckbox" style="color: beige;">Watched</label>
+          <h5 style="color: beige;">Experiment Time!</h5>
+          <iframe width="380" height="200" src="https://www.youtube.com/embed/Z4nH0rhHdJw?si=DGAM_JjMGYpZTrgb"  title="YouTube video player"></iframe>    
+        </div>
+        <div class="video-content">
+          <input type="checkbox" id="airPollutionVideosWatched5" name="airPollutionVideosWatched">
+          <label for="myCheckbox" style="color: beige;">Watched</label>
+        <h5 style="color: beige;">Air Pollution 101</h5>
+        <iframe width="380" height="200" src="https://www.youtube.com/embed/Tds3k97aAzo?si=1ldFsgqnIb5GXxnd"  title="YouTube video player"></iframe>    
+        </div>
+        <div class="video-content">
+          <input type="checkbox" id="airPollutionVideosWatched6" name="airPollutionVideosWatched">
+          <label for="myCheckbox" style="color: beige;">Watched</label>
+          <h5 style="color: beige;">Experiment Time!</h5>
+          <iframe width="380" height="200" src="https://www.youtube.com/embed/iuqPwd7rgqk?si=22Gp32W6qRslIHNs"  title="YouTube video player"></iframe>    
+          </div>
+          
+      </div>
+
+      <div class="container">
+        <div style="margin-left: 8%;" class="row">
+          <div class="col-md-4">
+            <div class="card">
+              <img src="sea level.png" class="card-img-top" alt="...">
+              <div style="background-color: #BEA497;" class="card-body">
+                <h5 style=" text-align: center;"  class="card-title">Learn about Rising Sea</h5>
+                <a style="margin-left: 15%;" href="risingsea.html" class="btn custom-btn">Learn More</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card">
+              <img src="air pollution.png" class="card-img-top" alt="...">
+              <div style="background-color:#BEA497 ;" class="card-body">
+                <h5 style=" text-align: center;" class="card-title">Quiz Time: Air Pollution</h5>
+                <a style="margin-left: 15%;" href="airpollutionquiz.html" class="btn custom-btn">Click here!</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card">
+              <img src="recyclinglogo.png" class="card-img-top" alt="...">
+              <div style="background-color: #BEA497;" class="card-body">
+                <h5 style=" text-align: center;"  class="card-title">Learn about Recycling</h5>
+                <a style="margin-left: 15%;" href="recycling.html" class="btn custom-btn">Learn More</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <h1 style="color: beige; text-align: center;" class="mt-5 mb-4">Air Pollution Fun Facts</h1>
+        <div class="mb-4">
+          <p style="color: beige; text-align: center;" id="ans"></p>
+        </div>
+        <div class="mb-4">
+          <button style="margin-left: 25%;" class="btn custom-btn" onclick="showPreviousAns()">Previous Fact</button>
+          <button  style="margin-left: 25%;" class="btn custom-btn" onclick="showNextAns()">Next Fact</button>
+        </div>
+      </div>
+    </div>
+    <div class="ContactDetails">
+      <h4>Follow Us</h4>
+      <a href="https://www.instagram.com/"><p>Instagram</p></a>
+      <a href= "https://www.facebook.com/"><p> Facebook</p></a>
+      <a href="https://twitter.com/"><p>Twitter</p></a>
+  
+  
+    </div>
+    <br>
+  
+    <div class="footer">
+      <a href="#" id="scrollToBottom">Contact Details</a>
+    </div>
+
+    <script>
+    const funFacts = [
+      "Did you know that the smell of freshly cut grass is actually a defense mechanism of the grass against stress caused by air pollution?",
+      "Air pollution isn't just outdoor - indoor air can be up to five times more polluted than outdoor air!",
+      "The Eiffel Tower in Paris shrinks by about 6 inches in cold weather due to the metal contracting from air pollution!",
+      "Air pollution can make sunsets more colorful by scattering light and creating vibrant hues!",
+      "In London during the 1950s, air pollution was so thick that people couldn't see their own feet!",
+      "Air pollution isn't just bad for your health - it can also damage buildings and monuments over time!",
+      "Some indoor plants, like spider plants and peace lilies, can help purify the air by removing pollutants!",
+      "Air pollution can affect weather patterns and contribute to the formation of smog, fog, and acid rain!",
+      "Air pollution can impact wildlife too - birds can suffer from respiratory problems due to polluted air!",
+      "Air pollution isn't just a modern problem - ancient civilizations also dealt with air pollution from activities like burning wood and coal!"
+    ];
+    
+      let currentIndex = 0;
+    
+      // Function to show the first fun fact
+      function showans() {
+        document.getElementById("ans").textContent = funFacts[currentIndex];
+      }
+    
+      // Function to show the next fun fact
+      function showNextAns() {
+        currentIndex = (currentIndex + 1) % funFacts.length;
+        showans();
+      }
+    
+      // Function to show the previous fun fact
+      function showPreviousAns() {
+        currentIndex = (currentIndex - 1 + funFacts.length) % funFacts.length;
+        showans();
+      }
+    
+      // Show the first fun fact initially
+      showans();
+    </script>
+    <script>
+
+    
+const headers = document.querySelectorAll(".header3, .header4");
+const letters = document.querySelectorAll(".letter, .letter1");
+const websiteContent = document.querySelector(".website-content");
+const totalHeight = document.body.scrollHeight;
+
+const sectionHeight = 60;
+
+window.addEventListener("scroll", () => {
+  const scrollY = window.scrollY;
+
+    const orderPairs = [
+    [0, 0],  // a
+    [1, 1],  // i
+    [2, 2],  // r
+    [3, 3],  // p
+    [4, 4],  // o
+    [5, 5],  // l
+    [6, 6],  // l
+    [7, 7],  // u
+    [8, 8],  // t
+    [9, 9],  // i
+    [10, 10], // o
+    [11, 11], // n
+    ];
+
+  orderPairs.forEach((pair, orderIndex) => {
+    const startScroll = sectionHeight * orderIndex;
+    let moveFactor = 0;
+
+    if (scrollY >= startScroll) {
+      moveFactor = Math.min(1, (scrollY - startScroll) / sectionHeight);
+    }
+
+    const translateY = -moveFactor * headers[0].offsetHeight;
+
+    pair.forEach((idx) => {
+      const letter = letters[idx];
+      gsap.to(letter, {
+        y: translateY,
+        zIndex: 1 - moveFactor,
+      });
+    });
+  });
+
+  // Hide images in header2 at a certain scroll position
+  if (scrollY > 700) { // Adjust the scroll position where you want to hide the images
+    document.querySelectorAll('.header2 img').forEach(img => {
+      img.style.display = 'none';
+    });
+  } else {
+    document.querySelectorAll('.header2 img').forEach(img => {
+      img.style.display = 'block';
+    });
+  }
+});
+window.addEventListener('scroll', function() {
+  const scrollTop = document.documentElement.scrollTop;
+  const scrollHeight = document.documentElement.scrollHeight;
+  const clientHeight = document.documentElement.clientHeight;
+
+  const scrolled = scrollTop / (scrollHeight - clientHeight) * 100;
+
+  const progressBar = document.getElementById('progressBar');
+  progressBar.style.width = scrolled + '%';
+
+  if (scrolled <= 33) {
+    progressBar.style.backgroundColor = 'red';
+  } else if (scrolled > 33 && scrolled <= 66) {
+    progressBar.style.backgroundColor = 'orange';
+  } else {
+    progressBar.style.backgroundColor = 'green';
+  }
+});
+
+// Adjust the body height based on the total height of the content
+document.body.style.height = totalHeight + "px";
+
+
+
+</script>
+<script src="login.js" type="module"></script>
+
+
+    <script>
+      // Show registration formhi
+      function showRegisterForm() {
+        document.getElementById('loginSignup').style.display = 'none';
+        document.getElementById('registerModal').style.display = 'block';
+        document.getElementById('forgotPasswordModal').style.display = 'none';
+      }
+    
+      // Show login form
+      function showLoginForm() {
+        document.getElementById('registerModal').style.display = 'none';
+        document.getElementById('loginSignup').style.display = 'block';
+        document.getElementById('forgotPasswordModal').style.display = 'none';
+    
+      }
+      //show forgot password form
+      function showforgotPasswordForm() {
+      document.getElementById('registerModal').style.display = 'none';
+      document.getElementById('loginSignup').style.display = 'none';
+      document.getElementById('forgotPasswordModal').style.display = 'block';
+      }
+    </script>
+     <!-- Login Modal -->
+      <div id="loginSignup" class="modal">
+      <form id="loginForm" class="modal-content animate">
+      <div class="imgcontainer">
+          <span onclick="document.getElementById('loginSignup').style.display='none'" class="close" title="Close Modal">&times;</span>
+          <img src="user logo.jpg" alt="Avatar" class="avatar">
+      </div>
+
+      <div class="container">
+          <label for="uname"><b>Email</b></label>
+          <input type="text" placeholder="Enter Username" id="uname" required>
+
+          <label for="psw"><b>Password</b></label>
+          <input type="password" placeholder="Enter Password" id="psw" required>
+
+          <button id="loginButton" class="button" onclick="document.getElementById('loginForm').style.display='none'">Login</button>
+          <label>
+          <input type="checkbox" checked="checked" name="remember"> Remember me
+          <span class="psw">Forgot <a href="javascript:void(0);" onclick="showforgotPasswordForm()">password?</a></span>
+
+          </label>
+      </div>
+
+      <div class="container" style="text-align: center;">
+          <span class="signup-link">Don't have an account? <a href="javascript:void(0);" onclick="showRegisterForm()">Sign Up</a></span>
+
+      </div>
+      <div class="container" style="background-color:#f1f1f1">
+          <button type="button" onclick="document.getElementById('loginSignup').style.display='none'" class="cancelbtn">Cancel</button>
+      </div>
+      </form>
+      </div>
+
+<!-- Registration Modal -->
+<div id="registerModal" class="modal">
+  <form id="registerForm" class="modal-content animate">
+    <div class="imgcontainer">
+      <span onclick="document.getElementById('registerModal').style.display='none'" class="close" title="Close Modal">&times;</span>
+      <img src="user logo.jpg" alt="Avatar" class="avatar">
+    </div>
+
+    <div class="container">
+      <label for="regEmail"><b>Email</b></label>
+      <input type="text" placeholder="Enter Email" name="regEmail" id="regEmail" required>
+
+      <label for="regUname"><b>Username</b></label>
+      <input type="text" placeholder="Enter Username"  name="regUname" id="regUname" required>
+
+      <label for="regPassword"><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" name="regPassword" id="regPassword" required>
+
+      <button id="registerButton" class="button" onclick="document.getElementById('registerForm').style.display='none'">Register</button>
+      
+    <div class="container" style="text-align: center;">
+      <span class="signup-link">Already have an account? <a href="javascript:void(0);" onclick="showLoginForm()">Log in</a></span>
+    </div>
+    <div class="container" style="background-color:#f1f1f1">
+      <button type="submit" onclick="document.getElementById('registerModal').style.display='none'" class="cancelbtn">Cancel</button>
+    </div>
+    </div>
+  </form>
+</div>
+
+<div id="forgotPasswordModal" class="modal">
+  <form id="forgotPasswordForm" class="modal-content animate">
+    <div class="imgcontainer">
+      <span onclick="document.getElementById('forgotPasswordModal').style.display='none'" class="close" title="Close Modal">&times;</span>
+      <img src="user logo.jpg" alt="Avatar" class="avatar">
+    </div>
+  
+    <div class="container">
+      <label for="Email"><b>Email</b></label>
+      <input type="text" placeholder="Enter Email" name="Email" id="Email" required>
+
+      <button type="loginSignupbtn" onclick="document.getElementById('forgotPasswordForm').style.display='none'">Reset Password</button>
+      
+    <div class="container" style="text-align: center;">
+      <span class="signup-link">Don't have an account? <a href="javascript:void(0);" onclick="showRegisterForm()">Sign Up</a></span>
+      <br><br>
+      <span class="signup-link">Already have an account? <a href="javascript:void(0);" onclick="showLoginForm()">Log in</a></span>
+    </div>
+
+    <div class="container" style="background-color:#f1f1f1">
+      <button type="button" onclick="document.getElementById('forgotPasswordModal').style.display='none'" class="cancelbtn">Cancel</button>
+    </div>
+    </div>
+  </form>
+
+  
+</div>
+
+</body>
+</html>

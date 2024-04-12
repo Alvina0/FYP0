@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Title</title>
+
+  <link rel="stylesheet" href="main.css">
+  <link rel="stylesheet" href="my.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+</head>
+
+<body style=" background-color:#063C62 ;">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> <!-- Include jQuery -->
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script> <!-- Include Bootstrap JavaScript -->
+
+  <!-- Your custom JavaScript -->
+  <nav class="navbar navbar-expand-lg ">
+    <img src="logo.png" alt="logo" class="navbar-brand" style="width: 12%;" href="">
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span style="background-image: url('hamburgericon.png'); " class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="main.html">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="quiz.html">Quizzes</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="news.html">News</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="discussion.html">Discussion Forum</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="howtohelp.html">How to Help</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle"  id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Choose A Topic
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="risingsea.html">Rising Sea Levels</a>
+            <a class="dropdown-item" href="airpollution.html">Air Pollution</a>
+            <a class="dropdown-item" href="recycling.html">Recycling</a>
+
+          </div>
+        </li>
+      </ul>
+
+      <button id="loginSignupButton" class="btn btn-outline-light" onclick="document.getElementById('loginSignup').style.display='block'">Login / Sign up</button>
+
+      <div id="userProfile" class="nav-item dropdown">
+        <i class="fa fa-user profile-icon" style="font-size:35px;" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></i>
+        <div class="dropdown-menu" id="userProfileDropdown">
+            <a class="dropdown-item" href="#" id="logoutLink">Logout</a>
+            <a class="dropdown-item" href="#">Settings</a>
+            <a class="dropdown-item" href="progresstracker.html">Progress Tracker</a>
+        </div>
+      </div>
+
+      </div>
+    </div>
+  </nav>
+    
+
+
+    <div id="progressBar"></div>
+
+    </div>
+    <img src="Untitled design.png" alt="background" class="background">
+
+
+  </div>
+
+  
+    <div class="header">
+      <div class="letter">
+        <img src="RR.png" alt="" />
+      </div>
+      <div class="letter">
+        <img src="i.png" alt="" />
+      </div>
+      <div class="letter">
+        <img src="s.png" alt="" />
+      </div>
+      <div class="letter">
+        <img src="i.png" alt="" />
+      </div>
+      <div class="letter">
+        <img src="n.png" alt="" />
+      </div>
+      <div class="letter">
+        <img src="g.png" alt="" />
+      </div>
+    </div>  
+    <div class="header1">
+      <div class="letter1">
+        <img src="SS.png" alt="" />
+      </div>
+      <div class="letter1">
+        <img src="e.png" alt="" />
+      </div>
+      <div class="letter1">
+        <img src="a.png" alt="" />
+      </div>
+    </div>
+    <div class="header2">
+      <div class="letter2">
+        <img src="LL.png" alt="" />
+      </div>
+      <div class="letter2">
+        <img src="e.png" alt="" />
+      </div>
+      <div class="letter2">
+        <img src="v.png" alt="" />
+      </div>
+      <div class="letter2">
+        <img src="e.png" alt="" />
+      </div>
+      <div class="letter2">
+        <img src="l.png" alt="" />
+      </div>
+      <div class="letter2">
+        <img src="s.png" alt="" />
+      </div>
+    </div>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/SplitText/3.0.1/SplitText.min.js"></script>
+    
+    <script src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  <style>
+    .circle-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.circle {
+  width: 45%;
+  border-radius: 50%;
+  background-color: rgba(69, 70, 95, 0.837);
+  padding: 20px;
+  margin-bottom: 20px;
+  font-size: 16px;
+  color: white;
+  text-align: center;
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+.circle h3 {
+  margin-bottom: 10px;
+}
+
+.circle p {
+  margin: 0;
+}
+
+  </style>
+
+    <div class="website-content">
+      <div class="readingsec">
+        <div class="parallax" style="height: 250px;">      </div>
+
+
+
+        <div style="height: 450px;" class="parallax">
+          <div style="height: 180px; background-color: rgba(69, 70, 95, 0.837); " class="parallax-content" >
+         
+            <h4>
+              <input type="checkbox" id="risingSeaContentRead1" name="risingSeaContentRead">
+              
+  
+              Introduction:
+              </h4>
+  
+              Rising sea levels are a pressing concern in today's world, driven primarily by climate change and the melting of polar ice caps. This phenomenon poses significant threats to coastal communities, biodiversity, and marine ecosystems worldwide. Let's explore how rising sea levels impact our oceans and the creatures that call them home.
+            </div>
+        </div>
+
+
+        <br><br><br><br>
+
+       
+        <div class="parallax2">
+          <br> 
+        <div style="height: 100px; background-color: rgba(69, 70, 95, 0.837);; " class="parallax-content2" >
+         
+          <h2>
+            <input type="checkbox" id="risingSeaContentRead2" name="risingSeaContentRead">
+            
+              Lets figure out why
+            </h2>
+
+            
+          </div>
+        </div>
+        <div style="height: 800px; justify-content: center;" class="parallax2">
+          <div  style="height: 70%; width: 90%;" class="circle-container">
+            <div style="width: 40%; height: 70%; margin-left: 8%;" class="circle">
+              <h3 style="text-align: center;">Ocean Warming</h3>
+              <p>As global temperatures rise, so do ocean temperatures. This warming effect disrupts marine habitats, forcing species to migrate to cooler waters or face extinction. 
+                <br>Delicate ecosystems like coral reefs are particularly vulnerable, as they depend on specific temperature ranges to thrive. 
+                <br>Warmer waters also contribute to the intensification of storms, further endangering coastal regions.</p>
+            </div>
+            <div style="width: 40%; height: 70%;  float: right;" class="circle">
+              <h3 style="text-align: center;">Ocean Acidification</h3>
+              <p>In addition to warming, rising carbon dioxide levels in the atmosphere lead to ocean acidification. 
+                <br>The absorption of carbon dioxide by seawater increases its acidity, posing a grave threat to marine life. 
+                <br>Corals, shellfish, and other organisms with calcium carbonate structures struggle to build and maintain their shells and skeletons in acidic conditions, jeopardizing their survival.</p>
+            </div>
+            <div style="width: 40%;height: 70%; margin-left: 8%;" class="circle">
+              <h3 style="text-align: center;">Rising Sea Levels</h3>
+              <p>The melting of polar ice caps and glaciers, combined with thermal expansion, contributes to rising sea levels. 
+                <br>Coastal areas face increased flooding, erosion, and saltwater intrusion into freshwater sources. 
+                <br>Low-lying islands and coastal communities are at risk of displacement, with socio-economic implications for millions of people who depend on coastal resources for their livelihoods.</p>
+            </div>
+            <div style="width: 40%; height: 70%; float: right;" class="circle">
+              <h3 style="text-align: center;">Changing Currents</h3>
+              <p>Climate change disrupts ocean currents, altering global circulation patterns with far-reaching consequences. 
+                <br>Changes in currents affect weather patterns, redistributing heat and moisture around the globe. 
+                <br>This can lead to more frequent and intense storms, impacting coastal infrastructure and ecosystems.</p>
+            </div>
+          </div>
+        </div>
+
+
+        <br><br><br><br>
+
+        <div class="parallax3"></div>
+
+
+
+        <div style="height: 500px;" class="parallax3">
+
+          <div style="height: 350px; background-color: rgba(69, 70, 95, 0.837);; " class="parallax-content3" >
+            <p>
+              <input type="checkbox" id="risingSeaContentRead3" name="risingSeaContentRead">
+              
+              Other Stressors:
+            </p>
+              Rising sea levels compound existing threats such as pollution and overfishing, exacerbating the degradation of marine habitats. Pollution from land-based sources, including plastics and chemicals, contaminates coastal waters, posing health risks to marine life and humans alike. Overfishing depletes fish stocks and disrupts marine food webs, jeopardizing ecosystem stability.
+              <h4>
+                To Summarise...
+              </h4>
+              <br>
+              Addressing rising sea levels requires urgent action on a global scale. Mitigating climate change through reducing greenhouse gas emissions, protecting and restoring coastal habitats, and implementing sustainable ocean management practices are essential steps toward safeguarding our oceans and coastal communities for future generations.
+            
+          </div>
+        </div>
+
+        <br><br><br><br>
+
+        <h3 style="color:beige; text-align: center;">
+          Learn better with visuals? 
+          <br>
+          Watch the videos below!
+        </h3>
+        <br><br><br>
+
+      </div>
+
+      <div class="video-container">
+        <div class="video-content">
+          <input type="checkbox" id="risingSeaVideosWatched1" name="risingSeaVideosWatched">
+          <label for="myCheckbox" style="color: beige;">Watched</label>
+          <h5 style="color: beige;">Experiment Time!</h5>
+          <iframe width="380" height="200" src="https://www.youtube.com/embed/hrufTakwFHg?si=sX1LZj2xj4oTBFYRautoplay=0" title="YouTube video player"></iframe>    
+        </div>
+        <div class="video-content">
+          <input type="checkbox" id="risingSeaVideosWatched2" name="risingSeaVideosWatched">
+          <label for="myCheckbox" style="color: beige;">Watched</label>
+        <h5 style="color: beige;">What Causes Rising Sea Levels?</h5>
+        <iframe width="380" height="200" src="https://www.youtube.com/embed/QH-KYmRAzOA?si=9fQBzah3pY4E7eOZautoplay=0" title="YouTube video player"></iframe>    
+        </div>
+        <div class="video-content">
+          <input type="checkbox" id="risingSeaVideosWatched3" name="risingSeaVideosWatched">
+          <label for="myCheckbox" style="color: beige;">Watched</label>
+          <h5 style="color: beige;" >How much Water on Earth??</h5>
+          <iframe width="380" height="200" src="https://www.youtube.com/embed/wZK2xTNzgq8?si=Sn27tr8oQW-V8NINautoplay=0" title="YouTube video player"></iframe>    
+          </div>
+          
+      </div>   
+       <div class="video-container">
+        <div class="video-content">
+          <input type="checkbox" id="risingSeaVideosWatched4" name="risingSeaVideosWatched">
+          <label for="myCheckbox" style="color: beige;">Watched</label>
+          <h5 style="color: beige;">Learn about the Ocean!</h5>
+          <iframe width="380" height="200" src="https://www.youtube.com/embed/6vgvTeuoDWY?si=GcrSKxS1n2zJkKjpautoplay=0" title="YouTube video player"></iframe>    
+        </div>
+        <div class="video-content">
+          <input type="checkbox" id="risingSeaVideosWatched5" name="risingSeaVideosWatched">
+          <label for="myCheckbox" style="color: beige;">Watched</label>
+        <h5 style="color: beige;">Melting ice affecting sea level rise!</h5>
+        <iframe width="380" height="200" src="https://www.youtube.com/embed/tYYSndaxl8w?si=h2XM9m1ty_ZLVUA-autoplay=0" title="YouTube video player"></iframe>    
+        </div>
+        <div class="video-content">
+          <input type="checkbox" id="risingSeaVideosWatched6" name="risingSeaVideosWatched">
+          <label for="myCheckbox" style="color: beige;">My Checkbox</label>
+          <h5 style="color: beige;">Global warming affecting sea level rise!</h5>
+          <iframe width="380" height="200" src="https://www.youtube.com/embed/6Fthw65WUpU?si=RT6HR-p4vKqGptOEautoplay=0" title="YouTube video player"></iframe>    
+          </div>
+          
+      </div>
+
+      <div class="container">
+        <div style="margin-left: 8%;"class="row">
+          <div  class="col-md-4">
+            <div  class="card">
+              <img src="air pollution.png" class="card-img-top" alt="...">
+              <div style="background-color: #839EB1;" class="card-body">
+                <h5 style="text-align: center;" class="card-title">Learn about Air Pollution</h5>
+                <a style="margin-left: 15%;" href="airpollution.html" class="btn custom-btn">Learn More</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card">
+              <img src="sea level.png" class="card-img-top" alt="...">
+              <div style="background-color: #839EB1;" class="card-body">
+                <h5 style="text-align: center;" class="card-title">Quiz Time: Rising Sea</h5>
+                <a style="margin-left: 15%;" href="risingseaquiz.html" class="btn custom-btn">Click here!</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card">
+              <img src="recyclinglogo.png" class="card-img-top" alt="...">
+              <div style="background-color: #839EB1;" class="card-body">
+                <h5 style="text-align: center;" class="card-title">Learn about Recycling</h5>
+                <a style="margin-left: 15%;" href="recycling.html" class="btn custom-btn">Learn More</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <h1 style="color: beige; text-align: center;" class="mt-5 mb-4">Rising Sea Levels Fun Facts</h1>
+        <div class="mb-4">
+          <p style="color: beige; text-align: center;" id="ans"></p>
+        </div>
+        <div class="mb-4">
+          <button style="margin-left: 25%;" class="btn custom-btn" onclick="showPreviousAns()">Previous Fact</button>
+          <button  style="margin-left: 25%;" class="btn custom-btn" onclick="showNextAns()">Next Fact</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Your JavaScript file -->
+
+    <script>
+
+    
+      const headers = document.querySelectorAll(".header, .header1, .header2");
+      const letters = document.querySelectorAll(".letter, .letter1, .letter2");
+      const websiteContent = document.querySelector(".website-content");
+      const totalHeight = document.body.scrollHeight;
+
+const sectionHeight = 60;
+
+window.addEventListener("scroll", () => {
+  const scrollY = window.scrollY;
+
+  const orderPairs = [
+    [0, 0],  // r
+    [1, 1],  // i
+    [2, 2],  // s
+    [3, 4],  // i2, n
+    [5, 6],  // g, s2
+    [7, 7],  // e
+    [8, 9],  // a, l
+    [10, 10], // v
+    [11, 11], // e2
+    [12, 12], // l2
+    [13, 14], // s3
+  ];
+
+  orderPairs.forEach((pair, orderIndex) => {
+    const startScroll = sectionHeight * orderIndex;
+    let moveFactor = 0;
+
+    if (scrollY >= startScroll) {
+      moveFactor = Math.min(1, (scrollY - startScroll) / sectionHeight);
+    }
+
+    const translateY = -moveFactor * headers[0].offsetHeight;
+
+    pair.forEach((idx) => {
+      const letter = letters[idx];
+      gsap.to(letter, {
+        y: translateY,
+        zIndex: 1 - moveFactor,
+      });
+    });
+  });
+
+  // Hide images in header2 at a certain scroll position
+  if (scrollY > 700) { // Adjust the scroll position where you want to hide the images
+    document.querySelectorAll('.header2 img').forEach(img => {
+      img.style.display = 'none';
+    });
+  } else {
+    document.querySelectorAll('.header2 img').forEach(img => {
+      img.style.display = 'block';
+    });
+  }
+});
+
+window.addEventListener('scroll', function() {
+  const scrollTop = document.documentElement.scrollTop;
+  const scrollHeight = document.documentElement.scrollHeight;
+  const clientHeight = document.documentElement.clientHeight;
+
+  const scrolled = scrollTop / (scrollHeight - clientHeight) * 100;
+
+  const progressBar = document.getElementById('progressBar');
+  progressBar.style.width = scrolled + '%';
+
+  if (scrolled <= 33) {
+    progressBar.style.backgroundColor = 'red';
+  } else if (scrolled > 33 && scrolled <= 66) {
+    progressBar.style.backgroundColor = 'orange';
+  } else {
+    progressBar.style.backgroundColor = 'green';
+  }
+});
+
+
+
+  const facts = [
+  "Did you know that melting ice caps from rising sea levels are like ice cubes melting in a giant glass of water?",
+  "Sea levels are rising faster than a sandcastle can disappear at high tide!",
+  "Coastal communities are feeling the squeeze as rising sea levels give beaches a big, wet hug.",
+  "Low-lying islands are playing a game of 'hide and seek' with rising sea levels – but the sea isn't playing fair!",
+  "Marine animals are doing their best synchronized swimming routine as the ocean comes closer to their homes.",
+  "Rising sea levels are the ocean's way of giving coastal cities a 'wet wake-up call'!",
+  "Sea levels are rising faster than a penguin sliding on its belly down an icy slope!",
+  "Coastal communities are on a rollercoaster ride of emotions as sea levels reach new heights!",
+  "Rising sea levels are turning coastal areas into a giant, underwater playground for fish – but humans aren't invited!",
+  "Urgent action is needed to tackle rising sea levels and keep coastal communities from feeling like they're swimming with the fishes!"
+  ];
+
+  let currentIndex = 0;
+
+  // Function to show the first answer
+  function showans() {
+    document.getElementById("ans").textContent = facts[currentIndex];
+  }
+
+  // Function to show the next fact
+  function showNextAns() {
+    currentIndex = (currentIndex + 1) % facts.length;
+    showans();
+  }
+
+  // Function to show the previous fact
+  function showPreviousAns() {
+    currentIndex = (currentIndex - 1 + facts.length) % facts.length;
+    showans();
+  }
+
+  // Show the first fact initially
+  showans();
+
+
+
+
+    // Show registration formhi
+    function showRegisterForm() {
+      document.getElementById('loginSignup').style.display = 'none';
+      document.getElementById('registerModal').style.display = 'block';
+      document.getElementById('forgotPasswordModal').style.display = 'none';
+    }
+  
+    // Show login form
+    function showLoginForm() {
+      document.getElementById('registerModal').style.display = 'none';
+      document.getElementById('loginSignup').style.display = 'block';
+      document.getElementById('forgotPasswordModal').style.display = 'none';
+  
+    }
+    //show forgot password form
+    function showforgotPasswordForm() {
+    document.getElementById('registerModal').style.display = 'none';
+    document.getElementById('loginSignup').style.display = 'none';
+    document.getElementById('forgotPasswordModal').style.display = 'block';
+    }
+  </script>
+<script src="login.js" type="module"></script>
+   <!-- Login Modal -->
+  <div id="loginSignup" class="modal">
+    <form id="loginForm" class="modal-content animate">
+      <div class="imgcontainer">
+          <span onclick="document.getElementById('loginSignup').style.display='none'" class="close" title="Close Modal">&times;</span>
+          <img src="user logo.jpg" alt="Avatar" class="avatar">
+      </div>
+
+      <div class="container">
+          <label for="uname"><b>Email</b></label>
+          <input type="text" placeholder="Enter Username" id="uname" required>
+
+          <label for="psw"><b>Password</b></label>
+          <input type="password" placeholder="Enter Password" id="psw" required>
+
+          <button id="loginButton" class="button" onclick="document.getElementById('loginForm').style.display='none'">Login</button>
+          <label>
+          <input type="checkbox" checked="checked" name="remember"> Remember me
+          <span class="psw">Forgot <a href="javascript:void(0);" onclick="showforgotPasswordForm()">password?</a></span>
+
+          </label>
+      </div>
+
+      <div class="container" style="text-align: center;">
+          <span class="signup-link">Don't have an account? <a href="javascript:void(0);" onclick="showRegisterForm()">Sign Up</a></span>
+
+      </div>
+      <div class="container" style="background-color:#f1f1f1">
+          <button type="button" onclick="document.getElementById('loginSignup').style.display='none'" class="cancelbtn">Cancel</button>
+      </div>
+    </form>
+  </div>
+
+
+    <!-- Registration Modal -->
+  <div id="registerModal" class="modal">
+    <form id="registerForm" class="modal-content animate">
+      <div class="imgcontainer">
+        <span onclick="document.getElementById('registerModal').style.display='none'" class="close" title="Close Modal">&times;</span>
+        <img src="user logo.jpg" alt="Avatar" class="avatar">
+      </div>
+
+      <div class="container">
+        <label for="regEmail"><b>Email</b></label>
+        <input type="text" placeholder="Enter Email" name="regEmail" id="regEmail" required>
+
+        <label for="regUname"><b>Username</b></label>
+        <input type="text" placeholder="Enter Username"  name="regUname" id="regUname" required>
+
+        <label for="regPassword"><b>Password</b></label>
+        <input type="password" placeholder="Enter Password" name="regPassword" id="regPassword" required>
+
+        <button id="registerButton" class="button" onclick="document.getElementById('registerForm').style.display='none'">Register</button>
+        
+        <div class="container" style="text-align: center;">
+          <span class="signup-link">Already have an account? <a href="javascript:void(0);" onclick="showLoginForm()">Log in</a></span>
+        </div>
+        <div class="container" style="background-color:#f1f1f1">
+          <button type="submit" onclick="document.getElementById('registerModal').style.display='none'" class="cancelbtn">Cancel</button>
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <div id="forgotPasswordModal" class="modal">
+    <form id="forgotPasswordForm" class="modal-content animate">
+      <div class="imgcontainer">
+        <span onclick="document.getElementById('forgotPasswordModal').style.display='none'" class="close" title="Close Modal">&times;</span>
+        <img src="user logo.jpg" alt="Avatar" class="avatar">
+      </div>
+
+      <div class="container">
+        <label for="Email"><b>Email</b></label>
+        <input type="text" placeholder="Enter Email" name="Email" id="Email" required>
+
+        <button type="loginSignupbtn" onclick="document.getElementById('forgotPasswordForm').style.display='none'">Reset Password</button>
+        
+      <div class="container" style="text-align: center;">
+        <span class="signup-link">Don't have an account? <a href="javascript:void(0);" onclick="showRegisterForm()">Sign Up</a></span>
+        <br><br>
+        <span class="signup-link">Already have an account? <a href="javascript:void(0);" onclick="showLoginForm()">Log in</a></span>
+      </div>
+
+      <div class="container" style="background-color:#f1f1f1">
+        <button type="button" onclick="document.getElementById('forgotPasswordModal').style.display='none'" class="cancelbtn">Cancel</button>
+      </div>
+      </div>
+    </form>
+
+  </div>
+  <div class="ContactDetails">
+    <h4>Follow Us</h4>
+    <a href="https://www.instagram.com/"><p>Instagram</p></a>
+    <a href= "https://www.facebook.com/"><p> Facebook</p></a>
+    <a href="https://twitter.com/"><p>Twitter</p></a>
+
+
+  </div>
+  <br>
+
+  <div class="footer">
+    <a href="#" id="scrollToBottom">Contact Details</a>
+  </div>
+  
+</body>
+</html>

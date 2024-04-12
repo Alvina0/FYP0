@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Title</title>
+  <link rel="stylesheet" href="main.css">
+  <link rel="stylesheet" href="my.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+</head>
+
+<body>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> <!-- Include jQuery -->
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script> <!-- Include Bootstrap JavaScript -->
+
+  <!-- Your custom JavaScript -->
+  <script type="module" src="login.js"></script>
+  <script type="module" src="airpollutionquiz.js" defer></script>
+
+
+  <nav class="navbar navbar-expand-lg ">
+    <img src="logo.png" alt="logo" class="navbar-brand" style="width: 12%;" href="">
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span style="background-image: url('hamburgericon.png'); " class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="main.html">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="quiz.html">Quizzes</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="news.html">News</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="discussion.html">Discussion Forum</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="howtohelp.html">How to Help</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle"  id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Choose A Topic
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="risingsea.html">Rising Sea Levels</a>
+            <a class="dropdown-item" href="airpollution.html">Air Pollution</a>
+            <a class="dropdown-item" href="recycling.html">Recycling</a>
+
+          </div>
+        </li>
+      </ul>
+
+      <button id="loginSignupButton" class="btn btn-outline-light" onclick="document.getElementById('loginSignup').style.display='block'">Login / Sign up</button>
+
+      <div id="userProfile" class="nav-item dropdown">
+        <i class="fa fa-user profile-icon" style="font-size:35px;" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></i>
+        <div class="dropdown-menu" id="userProfileDropdown">
+            <a class="dropdown-item" href="#" id="logoutLink">Logout</a>
+            <a class="dropdown-item" href="settings.html">Settings</a>
+            <a class="dropdown-item" href="progresstracker.html">Progress Tracker</a>
+        </div>
+      </div>
+
+      </div>
+    </div>
+  </nav>
+    
+    <script type="module" src="airpollutionquiz.js" defer></script>
+    <script src="login.js" type="module"></script>
+
+    <script>
+        // Show registration formhi
+        function showRegisterForm() {
+          document.getElementById('loginSignup').style.display = 'none';
+          document.getElementById('registerModal').style.display = 'block';
+          document.getElementById('forgotPasswordModal').style.display = 'none';
+        }
+      
+        // Show login form
+        function showLoginForm() {
+          document.getElementById('registerModal').style.display = 'none';
+          document.getElementById('loginSignup').style.display = 'block';
+          document.getElementById('forgotPasswordModal').style.display = 'none';
+      
+        }
+        //show forgot password form
+        function showforgotPasswordForm() {
+        document.getElementById('registerModal').style.display = 'none';
+        document.getElementById('loginSignup').style.display = 'none';
+        document.getElementById('forgotPasswordModal').style.display = 'block';
+        }
+      </script>
+       <!-- Login Modal -->
+        <div id="loginSignup" class="modal">
+        <form id="loginForm" class="modal-content animate">
+        <div class="imgcontainer">
+            <span onclick="document.getElementById('loginSignup').style.display='none'" class="close" title="Close Modal">&times;</span>
+            <img src="user logo.jpg" alt="Avatar" class="avatar">
+        </div>
+
+        <div class="container">
+            <label for="uname"><b>Email</b></label>
+            <input type="text" placeholder="Enter Username" id="uname" required>
+
+            <label for="psw"><b>Password</b></label>
+            <input type="password" placeholder="Enter Password" id="psw" required>
+
+            <button id="loginButton" class="button" onclick="document.getElementById('loginForm').style.display='none'">Login</button>
+            <label>
+            <input type="checkbox" checked="checked" name="remember"> Remember me
+            <span class="psw">Forgot <a href="javascript:void(0);" onclick="showforgotPasswordForm()">password?</a></span>
+
+            </label>
+        </div>
+
+        <div class="container" style="text-align: center;">
+            <span class="signup-link">Don't have an account? <a href="javascript:void(0);" onclick="showRegisterForm()">Sign Up</a></span>
+
+        </div>
+        <div class="container" style="background-color:#f1f1f1">
+            <button type="button" onclick="document.getElementById('loginSignup').style.display='none'" class="cancelbtn">Cancel</button>
+        </div>
+        </form>
+        </div>
+
+  <!-- Registration Modal -->
+  <div id="registerModal" class="modal">
+    <form id="registerForm" class="modal-content animate">
+      <div class="imgcontainer">
+        <span onclick="document.getElementById('registerModal').style.display='none'" class="close" title="Close Modal">&times;</span>
+        <img src="user logo.jpg" alt="Avatar" class="avatar">
+      </div>
+
+      <div class="container">
+        <label for="regEmail"><b>Email</b></label>
+        <input type="text" placeholder="Enter Email" name="regEmail" id="regEmail" required>
+
+        <label for="regUname"><b>Username</b></label>
+        <input type="text" placeholder="Enter Username"  name="regUname" id="regUname" required>
+
+        <label for="regPassword"><b>Password</b></label>
+        <input type="password" placeholder="Enter Password" name="regPassword" id="regPassword" required>
+
+        <button id="registerButton" class="button" onclick="document.getElementById('registerForm').style.display='none'">Register</button>
+        
+      <div class="container" style="text-align: center;">
+        <span class="signup-link">Already have an account? <a href="javascript:void(0);" onclick="showLoginForm()">Log in</a></span>
+      </div>
+      <div class="container" style="background-color:#f1f1f1">
+        <button type="submit" onclick="document.getElementById('registerModal').style.display='none'" class="cancelbtn">Cancel</button>
+      </div>
+      </div>
+    </form>
+  </div>
+
+  <div id="forgotPasswordModal" class="modal">
+    <form id="forgotPasswordForm" class="modal-content animate">
+      <div class="imgcontainer">
+        <span onclick="document.getElementById('forgotPasswordModal').style.display='none'" class="close" title="Close Modal">&times;</span>
+        <img src="user logo.jpg" alt="Avatar" class="avatar">
+      </div>
+    
+      <div class="container">
+        <label for="Email"><b>Email</b></label>
+        <input type="text" placeholder="Enter Email" name="Email" id="Email" required>
+
+        <button type="loginSignupbtn" onclick="document.getElementById('forgotPasswordForm').style.display='none'">Reset Password</button>
+        
+      <div class="container" style="text-align: center;">
+        <span class="signup-link">Don't have an account? <a href="javascript:void(0);" onclick="showRegisterForm()">Sign Up</a></span>
+        <br><br>
+        <span class="signup-link">Already have an account? <a href="javascript:void(0);" onclick="showLoginForm()">Log in</a></span>
+      </div>
+
+      <div class="container" style="background-color:#f1f1f1">
+        <button type="button" onclick="document.getElementById('forgotPasswordModal').style.display='none'" class="cancelbtn">Cancel</button>
+      </div>
+      </div>
+    </form>
+  </div>
+
+    <div id="quiz-container">
+      <h1 style="margin-left: 43%;">Quiz Time!</h1>
+        <button id="myBtn" style="margin-left: 45%;">Ready to Start?</button>
+        <button id="restartButton" style="display: none; width: 25%;">Restart Quiz</button>
+
+        <div id="myModal" class="modal">
+          <div class="modal-content">       
+            <span onclick="document.getElementById('myModal').style.display='none'" class="close" title="Close Modal">&times;</span>
+
+            <div id="questionnum">
+
+            </div>
+            <div id="questionContainer">
+                <!-- Questions will be displayed here -->
+            </div>
+        
+            <form id="quizForm">
+                <!-- Options will be displayed here -->
+                <button type="submit">Submit Answer</button>
+            </form>
+          </div>
+        </div>
+    </div>
+
+    <div id="recapSection" style="display: none; margin-left: 25%; max-width: 50%; ">
+      <h2 style="text-align: center;">Quiz Recap</h2>
+      <ul id="recapList"></ul>
+  </div>
+
+  
+
+  <style>
+.quiz-container{ 
+  margin-bottom: 100px; /* Adjust this value as needed based on your content */
+
+}
+body {
+  margin: 0;
+  padding: 0;
+  background-image: url('air.png'); /* Replace 'your-image.jpg' with the path to your image */
+  background-size: cover; /* Cover the entire viewport */
+  background-attachment: fixed; /* Keep the background fixed while scrolling */
+  background-position: center; /* Center the background image */
+}
+    /* Modal container */
+    .modal {
+      display: none; /* Hide modal by default */
+      position: fixed;
+      z-index: 1;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    }
+  
+    /* Modal content */
+    .modal-content {
+      background-color: #fefefe;
+      margin: 10% auto; /* Center modal vertically and horizontally */
+      padding: 20px;
+      border: 1px solid #888;
+      border-radius: 10px;
+      max-width: 600px; /* Adjust maximum width as needed */
+    }
+  
+    /* Close button */
+    .close {
+      color: #aaa;
+      float: right;
+      font-size: 28px;
+      font-weight: bold;
+    }
+  
+    .close:hover,
+    .close:focus {
+      color: black;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    .recap-header {
+    background-color: #BEA497;
+    color: #fefefe;
+    padding: 10px;
+}
+
+.recap-question {
+    margin-top: 20px;
+}
+
+.recap-item {
+    background-color: #BEA497;
+    color: #fefefe;
+    padding: 10px;
+}
+
+  </style>
+  
+    <script>
+      // Get the modal
+      var modal = document.getElementById("myModal");
+      
+      // Get the button that opens the modal
+      var btn = document.getElementById("myBtn");
+
+      
+      // When the user clicks the button, open the modal 
+      btn.onclick = function() {
+        modal.style.display = "block";
+      }
+      
+      </script>
+
+<div style="margin-top: 500px;" class="ContactDetails">
+    <h4>Follow Us</h4>
+    <a href="https://www.instagram.com/"><p>Instagram</p></a>
+    <a href= "https://www.facebook.com/"><p> Facebook</p></a>
+    <a href="https://twitter.com/"><p>Twitter</p></a>
+
+
+  </div>
+  <br>
+
+  <div class="footer">
+    <a href="#" id="scrollToBottom">Contact Details</a>
+  </div>
+  
+</body>
+
+</html>

@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Title</title>
+
+  <link rel="stylesheet" href="main.css">
+  <link rel="stylesheet" href="my.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+</head>
+
+<body style=" background-color:#53943C ;">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> <!-- Include jQuery -->
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script> <!-- Include Bootstrap JavaScript -->
+
+  <!-- Your custom JavaScript -->
+  <script type="module" src="login.js"></script>
+
+
+  <nav class="navbar navbar-expand-lg ">
+    <img src="logo.png" alt="logo" class="navbar-brand" style="width: 12%;" href="">
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span style="background-image: url('hamburgericon.png'); " class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="main.html">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="quiz.html">Quizzes</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="news.html">News</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="discussion.html">Discussion Forum</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="howtohelp.html">How to Help</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle"  id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Choose A Topic
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="risingsea.html">Rising Sea Levels</a>
+            <a class="dropdown-item" href="airpollution.html">Air Pollution</a>
+            <a class="dropdown-item" href="recycling.html">Recycling</a>
+
+          </div>
+        </li>
+      </ul>
+
+      <button id="loginSignupButton" class="btn btn-outline-light" onclick="document.getElementById('loginSignup').style.display='block'">Login / Sign up</button>
+
+      <div id="userProfile" class="nav-item dropdown">
+        <i class="fa fa-user profile-icon" style="font-size:35px;" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></i>
+        <div class="dropdown-menu" id="userProfileDropdown">
+            <a class="dropdown-item" href="#" id="logoutLink">Logout</a>
+            <a class="dropdown-item" href="settings.html">Settings</a>
+            <a class="dropdown-item" href="progresstracker.html">Progress Tracker</a>
+        </div>
+      </div>
+
+      </div>
+    </div>
+  </nav>
+    
+
+
+    <div id="progressBar"></div>
+
+    </div>
+    <img src="recycling.png" alt="background" class="background">
+
+
+  </div>
+
+  
+    <div class="header5">
+      <div class="letter">
+        <img src="RR.png" alt="" />
+      </div>
+      <div class="letter">
+        <img src="e.png" alt="" />
+      </div>
+      <div class="letter">
+        <img src="c.png" alt="" />
+      </div>
+      <div class="letter">
+        <img src="y.png" alt="" />
+      </div>
+      <div class="letter">
+        <img src="c.png" alt="" />
+      </div>
+      <div class="letter">
+        <img src="l.png" alt="" />
+      </div>
+      <div class="letter">
+        <img src="i.png" alt="" />
+      </div>
+      <div class="letter">
+        <img src="n.png" alt="" />
+      </div>
+      <div class="letter">
+        <img src="g.png" alt="" />
+      </div>
+    </div>  
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/SplitText/3.0.1/SplitText.min.js"></script>
+    
+    <script src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  
+    <style>
+      .circle-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.circle {
+  width: 30%;
+  border-radius: 50%;
+  background-color: rgba(84, 138, 109, 0.8);
+  padding: 20px;
+  margin-bottom: 20px;
+  font-size: 16px;
+  color: white;
+  text-align: center;
+  font-size: 18px;
+  line-height: 1.9;
+}
+
+.circle h3 {
+  margin-bottom: 10px;
+}
+
+.circle p {
+  margin: 0;
+}
+
+    </style>
+
+    <div class="website-content">
+      <div class="readingsec">
+        <div class="parallax4" style="height: 300px; ">      </div>
+
+        <div style="height: 700px;" class="parallax4">
+
+          <div style="height: 100px;  background-color: rgba(84, 138, 109, 0.8); " class="parallax-content" >
+            <h4>
+              <input type="checkbox" id="recyclingContentRead1" name="recyclingContentRead">
+              
+  
+              Introduction:
+              </h4>
+              Recycling is the process of transforming waste materials into new products instead of disposing of them in landfills or incinerating them. It plays a vital role in conserving resources, reducing pollution, and protecting the environment for future generations.
+          </div><br>
+              <div style="height: 150px;  background-color: rgba(84, 138, 109, 0.8); " class="parallax-content" >
+                <h4>  
+                  What is Recycling?
+
+                </h4>
+              
+              Recycling involves collecting, sorting, processing, and converting waste materials into reusable materials or products. Instead of ending up in landfills or being burned, recyclable materials are diverted from the waste stream and given a new life through various recycling processes.
+              </div><br>
+              
+              <div style="height: 150px;  background-color: rgba(84, 138, 109, 0.8); " class="parallax-content" >
+              <h4> 
+                How Does Recycling Work?
+
+              </h4>
+              <br>
+              Recycling starts with the collection of recyclable materials, which are then sorted based on their material composition. These materials are then cleaned and processed to remove contaminants and prepare them for manufacturing new products.
+          </div>
+        </div>
+
+
+        <br><br><br><br>
+
+       
+        <div class="parallax5">
+          <br>
+          <div style="height: 80px;  background-color: rgba(84, 138, 109, 0.8); " class="parallax-content2" >
+            
+           <h2>
+              <input type="checkbox" id="recyclingContentRead2" name="recyclingContentRead">
+              Recyclable Items:
+              </h2>
+              </div>
+        </div>
+
+
+
+        <div style="height: 800px;" class="parallax5">
+          <div class="circle-container">
+            <div class="circle">
+              <h3>Paper &<br>Cardboard Recycling</h3>
+              <p>Paper and cardboard materials are collected and cleaned to remove ink and contaminants. They are then pulped, processed, and rolled into thin sheets to create recycled paper products, including cardboard packaging and newspapers.</p>
+            </div>
+            <div class="circle">
+              <h3>Tins & Cans <br>Recycling</h3>
+              <p>Food tins and cans are collected and melted down in furnaces to produce metal ingots. These ingots are used to manufacture new metal products, such as beverage cans, automotive parts, and appliances.</p>
+            </div>
+            <div class="circle">
+              <h3>Glass Recycling</h3>
+              <p>Glass containers are collected, sorted by color, and crushed into small pieces called cullet. The cullet is melted in furnaces and molded into new glass products, such as bottles, jars, and fiberglass insulation.</p>
+            </div>
+            <div style="margin-left: 13%;" class="circle">
+              <h3>Plastic Recycling</h3>
+              <p>Plastic items are shredded into small pieces and sorted by type. The shredded plastic is then melted and formed into pellets, which can be used to manufacture a wide range of products, including packaging materials, textiles, and construction materials.</p>
+            </div>
+            <div style="margin-right: 13%;" class="circle">
+              <h3>Metal Recycling</h3>
+              <p>Metals are separated from other materials using manual or mechanical methods. They are then melted down and cast into ingots or billets, which are used to produce new metal products, including automotive parts, appliances, and structural components.</p>
+            </div>
+          </div>
+          
+        </div>
+
+
+        <br><br><br><br>
+
+        <div style="height: 600px;" class="parallax6">
+          <br>
+          <div style="margin-top: 5%; height: 150px; background-color: rgba(84, 138, 109, 0.8); " class="parallax-content3" >
+          
+              
+          <h4>        
+            <input type="checkbox" id="recyclingContentRead3" name="recyclingContentRead">
+
+            Benefits of Recycling:
+           </h4>
+            </p>
+              Recycling conserves natural resources, reduces energy consumption, and minimizes pollution by diverting waste from landfills and reducing the need for raw materials extraction. It also creates jobs, stimulates economic growth, and promotes sustainable living practices.
+            
+              </div><br>
+            <div style="height: 150px; background-color: rgba(84, 138, 109, 0.8); " class="parallax-content3" >
+
+            Effects of littering on animals and our environment:
+            <br>
+            The improper disposal of waste in public spaces, has harmful effects on animals and the environment. Wildlife can ingest or become entangled in litter, leading to injury or death. Litter also contaminates water sources, harming aquatic life, and detracts from the beauty of landscapes. Moreover, it contributes to soil degradation and air pollution. Addressing littering through education, enforcement of anti-littering laws, and community clean-up efforts is crucial for preserving biodiversity and ecosystem health.
+          </div>
+        </div>
+
+
+
+        <div style="height: 300px;" class="parallax6">
+          <div style="background-color: rgba(84, 138, 109, 0.8); height: 180px;" class="parallax-content3">
+            <h4 >
+              To summarise...
+          </h4>
+            <br>
+            Recycling plays a crucial role in mitigating environmental degradation and promoting a circular economy where resources are reused, recycled, and repurposed. By embracing recycling practices, individuals and communities can contribute to a cleaner, healthier planet for present and future generations.
+  
+          </div>
+
+        </div>
+       
+
+        <br><br><br><br>
+
+        <h3 style="color:beige; text-align: center;">
+          Learn better with visuals? 
+          <br>
+          Watch the videos below!
+        </h3>
+        <br><br><br>
+
+      </div>
+
+      <div class="video-container">
+        <div class="video-content">
+          <input type="checkbox" id="recyclingVideosWatched1" name="recyclingVideosWatched">
+          <label for="myCheckbox" style="color: beige;">Watched</label>
+          <h5 style="color: beige;">What is Recycling?</h5>
+          <iframe width="380" height="200" src="https://www.youtube.com/embed/6jQ7y_qQYUA?si=-XJp3PlWLC7Lguek"  title="YouTube video player"></iframe>    
+        </div>
+        <div class="video-content">
+          <input type="checkbox" id="recyclingVideosWatched2" name="recyclingVideosWatched">
+          <label for="myCheckbox" style="color: beige;">Watched</label>
+        <h5 style="color: beige;">Lifecycle of a Waterbottle</h5>
+        <iframe width="380" height="200"src="https://www.youtube.com/embed/_6xlNyWPpB8?si=vwON3cpnrRw4i79m"  title="YouTube video player"></iframe>    
+        </div>
+        <div class="video-content">
+          <input type="checkbox" id="recyclingVideosWatched3" name="recyclingVideosWatched">
+          <label for="myCheckbox" style="color: beige;">Watched</label>
+          <h5 style="color: beige;" >How to keep plastics out of the ocean</h5>
+          <iframe width="380" height="200" src="https://www.youtube.com/embed/HQTUWK7CM-Y?si=JKIfkNlZtpXuKAr4"  title="YouTube video player"></iframe>    
+          </div>
+          
+      </div>   
+       <div class="video-container">
+        <div class="video-content">
+          <input type="checkbox" id="recyclingVideosWatched4" name="recyclingVideosWatched">
+          <label for="myCheckbox" style="color: beige;">Watched</label>
+          <h5 style="color: beige;">Make your own Recycled Paper!</h5>
+          <iframe width="380" height="200" src="https://www.youtube.com/embed/XF6OV0brUC0?si=fho-w-DgyC9Vrioq" title="YouTube video player"></iframe>    
+        </div>
+        <div class="video-content">
+            <input type="checkbox" id="recyclingVideosWatched6" name="recyclingVideosWatched6">
+            <label for="myCheckbox" style="color: beige;">My Checkbox</label>
+            <h5 style="color: beige;">How is glass recycled?</h5>
+            <iframe width="380" height="200"src="https://www.youtube.com/embed/LR9FtWVjk2c?si=ongO7rXccKRQpHVZ"  title="YouTube video player"></iframe>    
+            </div>
+        <div class="video-content">
+          <input type="checkbox" id="recyclingVideosWatched5" name="recyclingVideosWatched">
+          <label for="myCheckbox" style="color: beige;">Watched</label>
+        <h5 style="color: beige;"> Upcycle your Tin Cans!</h5>
+        <iframe width="380" height="200"src="https://www.youtube.com/embed/Ui2KRfSHDE0?si=viQF-NMJFFy-3Ixz"  title="YouTube video player"></iframe>    
+        </div>
+
+          
+      </div>
+
+      <div class="container">
+        <div style="margin-left: 8%;" class="row">
+          <div class="col-md-4">
+            <div class="card">
+              <img src="air pollution.png" class="card-img-top" alt="...">
+              <div style="background-color: #A9CA9E;" class="card-body">
+                <h5 style=" text-align: center;"  class="card-title">Learn about Air pollution</h5>
+                <a style="margin-left: 15%;" href="airpollution.html" class="btn custom-btn">Learn More</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card">
+              <img src="recyclinglogo.png" class="card-img-top" alt="...">
+              <div style="background-color: #A9CA9E;" class="card-body">
+                <h5 style=" text-align: center;"  class="card-title">Quiz Time: Recycling</h5>
+                <a style="margin-left: 15%;" href="recyclingquiz.html" class="btn custom-btn">Click here!</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card">
+              <img src="sea level.png" class="card-img-top" alt="...">
+              <div style="background-color: #A9CA9E;" class="card-body">
+                <h5 style=" text-align: center;"  class="card-title">Learn about Rising Sea Levels</h5>
+                <a style="margin-left: 15%;" href="risingsea.html" class="btn custom-btn">Learn More</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <h1 style="color: beige; text-align: center;" class="mt-5 mb-4">Recycling Fun Facts</h1>
+        <div class="mb-4">
+          <p style="color: beige; text-align: center;" id="ans"></p>
+        </div>
+        <div class="mb-4">
+          <button style="margin-left: 25%;" class="btn custom-btn" onclick="showPreviousAns()">Previous Fact</button>
+          <button  style="margin-left: 25%;" class="btn custom-btn" onclick="showNextAns()">Next Fact</button>
+        </div>
+      </div>
+    </div>
+
+    <script>
+        const funFacts = [
+          "Recycling one aluminum can saves enough energy to run a TV for three hours!",
+          "Glass can be recycled an infinite number of times without losing its quality!",
+          "Paper can decompose in under five months, but in landfills, it takes up to 20 years!",
+          "Recycling one ton of paper saves 17 trees, 7,000 gallons of water, and 463 gallons of oil!",
+          "Plastic bottles can take up to 450 years to decompose in a landfill!",
+          "Recycling just one ton of plastic can save up to 2,000 gallons of gasoline!",
+          "Americans throw away enough office paper each year to build a 12-foot high wall from New York to California!",
+          "Recycling saves energy - for example, recycling one ton of paper can save 4,100 kWh of energy!",
+          "Glass recycling helps reduce air pollution by 20% and water pollution by 50%!",
+          "Recycling reduces greenhouse gas emissions that contribute to climate change!"
+        ];
+    
+        let currentIndex = 0;
+    
+        // Function to show the first fun fact
+        function showans() {
+          document.getElementById("ans").textContent = funFacts[currentIndex];
+        }
+    
+        // Function to show the next fun fact
+        function showNextAns() {
+          currentIndex = (currentIndex + 1) % funFacts.length;
+          showans();
+        }
+    
+        // Function to show the previous fun fact
+        function showPreviousAns() {
+          currentIndex = (currentIndex - 1 + funFacts.length) % funFacts.length;
+          showans();
+        }
+    
+        // Show the first fun fact initially
+        showans();
+      </script>
+    <!-- Your JavaScript file -->
+    <script type="module" src="login.js"></script>
+    <script>
+      /*
+      const tl = gsap.timeline({
+      scrollTrigger: {
+        scrub: 1,
+        pin: true,
+        trigger: "#pin-windmill",
+        start: "50% 50%",
+        endTrigger: "#pin-windmill-wrap",
+        end: "bottom 50%",
+      },
+      });
+    
+      tl.to("#pin-windmill", {
+      rotateZ: 500,
+      });*/
+
+      
+    
+      const headers = document.querySelectorAll(".header5");
+const letters = document.querySelectorAll(".letter");
+const websiteContent = document.querySelector(".website-content");
+const totalHeight = document.body.scrollHeight;
+
+const sectionHeight = 60;
+
+window.addEventListener("scroll", () => {
+  const scrollY = window.scrollY;
+
+  const orderPairs = [
+    [0, 0],  // r
+    [1, 1],  // e
+    [2, 2],  // c
+    [3, 3],  // y
+    [4, 4],  // c 
+    [5, 5],  // l
+    [6, 6],  // i
+    [7, 7],  // n
+    [8, 8],  // g
+];
+
+  orderPairs.forEach((pair, orderIndex) => {
+    const startScroll = sectionHeight * orderIndex;
+    let moveFactor = 0;
+
+    if (scrollY >= startScroll) {
+      moveFactor = Math.min(1, (scrollY - startScroll) / sectionHeight);
+    }
+
+    const translateY = -moveFactor * headers[0].offsetHeight;
+
+    pair.forEach((idx) => {
+      const letter = letters[idx];
+      gsap.to(letter, {
+        y: translateY,
+        zIndex: 1 - moveFactor,
+      });
+    });
+  });
+
+  // Hide images in header2 at a certain scroll position
+  if (scrollY > 700) { // Adjust the scroll position where you want to hide the images
+    document.querySelectorAll('.header2 img').forEach(img => {
+      img.style.display = 'none';
+    });
+  } else {
+    document.querySelectorAll('.header2 img').forEach(img => {
+      img.style.display = 'block';
+    });
+  }
+});
+
+window.addEventListener('scroll', function() {
+  const scrollTop = document.documentElement.scrollTop;
+  const scrollHeight = document.documentElement.scrollHeight;
+  const clientHeight = document.documentElement.clientHeight;
+
+  const scrolled = scrollTop / (scrollHeight - clientHeight) * 100;
+
+  const progressBar = document.getElementById('progressBar');
+  progressBar.style.width = scrolled + '%';
+
+  if (scrolled <= 33) {
+    progressBar.style.backgroundColor = 'red';
+  } else if (scrolled > 33 && scrolled <= 66) {
+    progressBar.style.backgroundColor = 'orange';
+  } else {
+    progressBar.style.backgroundColor = 'green';
+  }
+});
+
+</script>
+    
+<script src="login.js" type="module"></script>
+
+  <script>
+    // Show registration formhi
+    function showRegisterForm() {
+      document.getElementById('loginSignup').style.display = 'none';
+      document.getElementById('registerModal').style.display = 'block';
+      document.getElementById('forgotPasswordModal').style.display = 'none';
+    }
+  
+    // Show login form
+    function showLoginForm() {
+      document.getElementById('registerModal').style.display = 'none';
+      document.getElementById('loginSignup').style.display = 'block';
+      document.getElementById('forgotPasswordModal').style.display = 'none';
+  
+    }
+    //show forgot password form
+    function showforgotPasswordForm() {
+    document.getElementById('registerModal').style.display = 'none';
+    document.getElementById('loginSignup').style.display = 'none';
+    document.getElementById('forgotPasswordModal').style.display = 'block';
+    }
+  </script>
+
+   <!-- Login Modal -->
+  <div id="loginSignup" class="modal">
+    <form id="loginForm" class="modal-content animate">
+      <div class="imgcontainer">
+          <span onclick="document.getElementById('loginSignup').style.display='none'" class="close" title="Close Modal">&times;</span>
+          <img src="user logo.jpg" alt="Avatar" class="avatar">
+      </div>
+
+      <div class="container">
+          <label for="uname"><b>Email</b></label>
+          <input type="text" placeholder="Enter Username" id="uname" required>
+
+          <label for="psw"><b>Password</b></label>
+          <input type="password" placeholder="Enter Password" id="psw" required>
+
+          <button id="loginButton" class="button" onclick="document.getElementById('loginForm').style.display='none'">Login</button>
+          <label>
+          <input type="checkbox" checked="checked" name="remember"> Remember me
+          <span class="psw">Forgot <a href="javascript:void(0);" onclick="showforgotPasswordForm()">password?</a></span>
+
+          </label>
+      </div>
+
+      <div class="container" style="text-align: center;">
+          <span class="signup-link">Don't have an account? <a href="javascript:void(0);" onclick="showRegisterForm()">Sign Up</a></span>
+
+      </div>
+      <div class="container" style="background-color:#f1f1f1">
+          <button type="button" onclick="document.getElementById('loginSignup').style.display='none'" class="cancelbtn">Cancel</button>
+      </div>
+    </form>
+  </div>
+
+
+    <!-- Registration Modal -->
+  <div id="registerModal" class="modal">
+    <form id="registerForm" class="modal-content animate">
+      <div class="imgcontainer">
+        <span onclick="document.getElementById('registerModal').style.display='none'" class="close" title="Close Modal">&times;</span>
+        <img src="user logo.jpg" alt="Avatar" class="avatar">
+      </div>
+
+      <div class="container">
+        <label for="regEmail"><b>Email</b></label>
+        <input type="text" placeholder="Enter Email" name="regEmail" id="regEmail" required>
+
+        <label for="regUname"><b>Username</b></label>
+        <input type="text" placeholder="Enter Username"  name="regUname" id="regUname" required>
+
+        <label for="regPassword"><b>Password</b></label>
+        <input type="password" placeholder="Enter Password" name="regPassword" id="regPassword" required>
+
+        <button id="registerButton" class="button" onclick="document.getElementById('registerForm').style.display='none'">Register</button>
+        
+        <div class="container" style="text-align: center;">
+          <span class="signup-link">Already have an account? <a href="javascript:void(0);" onclick="showLoginForm()">Log in</a></span>
+        </div>
+        <div class="container" style="background-color:#f1f1f1">
+          <button type="submit" onclick="document.getElementById('registerModal').style.display='none'" class="cancelbtn">Cancel</button>
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <div id="forgotPasswordModal" class="modal">
+    <form id="forgotPasswordForm" class="modal-content animate">
+      <div class="imgcontainer">
+        <span onclick="document.getElementById('forgotPasswordModal').style.display='none'" class="close" title="Close Modal">&times;</span>
+        <img src="user logo.jpg" alt="Avatar" class="avatar">
+      </div>
+
+      <div class="container">
+        <label for="Email"><b>Email</b></label>
+        <input type="text" placeholder="Enter Email" name="Email" id="Email" required>
+
+        <button type="loginSignupbtn" onclick="document.getElementById('forgotPasswordForm').style.display='none'">Reset Password</button>
+        
+      <div class="container" style="text-align: center;">
+        <span class="signup-link">Don't have an account? <a href="javascript:void(0);" onclick="showRegisterForm()">Sign Up</a></span>
+        <br><br>
+        <span class="signup-link">Already have an account? <a href="javascript:void(0);" onclick="showLoginForm()">Log in</a></span>
+      </div>
+
+      <div class="container" style="background-color:#f1f1f1">
+        <button type="button" onclick="document.getElementById('forgotPasswordModal').style.display='none'" class="cancelbtn">Cancel</button>
+      </div>
+      </div>
+    </form>
+
+  </div>
+  <div class="ContactDetails">
+    <h4>Follow Us</h4>
+    <a href="https://www.instagram.com/"><p>Instagram</p></a>
+    <a href= "https://www.facebook.com/"><p> Facebook</p></a>
+    <a href="https://twitter.com/"><p>Twitter</p></a>
+
+
+  </div>
+  <br>
+
+  <div class="footer">
+    <a href="#" id="scrollToBottom">Contact Details</a>
+  </div>
+  
+</body>
+</html>

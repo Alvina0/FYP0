@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Title</title>
+  <link rel="stylesheet" href="main.css">
+  <link rel="stylesheet" href="my.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+</head>
+
+<body>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> <!-- Include jQuery -->
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script> <!-- Include Bootstrap JavaScript -->
+
+  <!-- Your custom JavaScript -->
+  <script type="module" src="login.js"></script>
+
+  <nav class="navbar navbar-expand-lg ">
+    <img src="logo.png" alt="logo" class="navbar-brand" style="width: 12%;" href="">
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span style="background-image: url('hamburgericon.png'); " class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="main.html">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="quiz.html">Quizzes</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="news.html">News</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="discussion.html">Discussion Forum</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="howtohelp.html">How to Help</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle"  id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Choose A Topic
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="risingsea.html">Rising Sea Levels</a>
+            <a class="dropdown-item" href="airpollution.html">Air Pollution</a>
+            <a class="dropdown-item" href="recycling.html">Recycling</a>
+
+          </div>
+        </li>
+      </ul>
+
+      <button id="loginSignupButton" class="btn btn-outline-light" onclick="document.getElementById('loginSignup').style.display='block'">Login / Sign up</button>
+
+      <div id="userProfile" class="nav-item dropdown">
+        <i class="fa fa-user profile-icon" style="font-size:35px;" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></i>
+        <div class="dropdown-menu" id="userProfileDropdown">
+            <a class="dropdown-item" href="#" id="logoutLink">Logout</a>
+            <a class="dropdown-item" href="settings.html">Settings</a>
+            <a class="dropdown-item" href="progresstracker.html">Progress Tracker</a>
+        </div>
+      </div>
+
+      </div>
+    </div>
+  </nav>
+  <style>
+    body {
+      /* Set background image */
+      background-image: url('backdrop.png');
+      /* Set background image size to cover the entire page */
+      background-size: cover;
+      /* Center the background image */
+      background-position: center;
+      /* Fix the background image to prevent it from scrolling with the content */
+      background-attachment: fixed;
+    }
+    /* Add additional styles as needed */
+  </style>
+
+  <script src="importrequests.js" type="module"></script>
+
+  <script src="login.js" type="module"></script>
+
+  <script>
+    // Show registration formhi
+    function showRegisterForm() {
+      document.getElementById('loginSignup').style.display = 'none';
+      document.getElementById('registerModal').style.display = 'block';
+      document.getElementById('forgotPasswordModal').style.display = 'none';
+    }
+  
+    // Show login form
+    function showLoginForm() {
+      document.getElementById('registerModal').style.display = 'none';
+      document.getElementById('loginSignup').style.display = 'block';
+      document.getElementById('forgotPasswordModal').style.display = 'none';
+  
+    }
+    //show forgot password form
+    function showforgotPasswordForm() {
+    document.getElementById('registerModal').style.display = 'none';
+    document.getElementById('loginSignup').style.display = 'none';
+    document.getElementById('forgotPasswordModal').style.display = 'block';
+    }
+  </script>
+   <!-- Login Modal -->
+    <div id="loginSignup" class="modal">
+    <form id="loginForm" class="modal-content animate">
+    <div class="imgcontainer">
+        <span onclick="document.getElementById('loginSignup').style.display='none'" class="close" title="Close Modal">&times;</span>
+        <img src="user logo.jpg" alt="Avatar" class="avatar">
+    </div>
+
+    <div class="container">
+        <label for="uname"><b>Email</b></label>
+        <input type="text" placeholder="Enter Username" id="uname" required>
+
+        <label for="psw"><b>Password</b></label>
+        <input type="password" placeholder="Enter Password" id="psw" required>
+
+        <button id="loginButton" class="button" onclick="document.getElementById('loginForm').style.display='none'">Login</button>
+        <label>
+        <input type="checkbox" checked="checked" name="remember"> Remember me
+        <span class="psw">Forgot <a href="javascript:void(0);" onclick="showforgotPasswordForm()">password?</a></span>
+
+        </label>
+    </div>
+
+    <div class="container" style="text-align: center;">
+        <span class="signup-link">Don't have an account? <a href="javascript:void(0);" onclick="showRegisterForm()">Sign Up</a></span>
+
+    </div>
+    <div class="container" style="background-color:#f1f1f1">
+        <button type="button" onclick="document.getElementById('loginSignup').style.display='none'" class="cancelbtn">Cancel</button>
+    </div>
+    </form>
+    </div>
+
+<!-- Registration Modal -->
+<div id="registerModal" class="modal">
+<form id="registerForm" class="modal-content animate">
+  <div class="imgcontainer">
+    <span onclick="document.getElementById('registerModal').style.display='none'" class="close" title="Close Modal">&times;</span>
+    <img src="user logo.jpg" alt="Avatar" class="avatar">
+  </div>
+
+  <div class="container">
+    <label for="regEmail"><b>Email</b></label>
+    <input type="text" placeholder="Enter Email" name="regEmail" id="regEmail" required>
+
+    <label for="regUname"><b>Username</b></label>
+    <input type="text" placeholder="Enter Username"  name="regUname" id="regUname" required>
+
+    <label for="regPassword"><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" name="regPassword" id="regPassword" required>
+
+    <button id="registerButton" class="button" onclick="document.getElementById('registerForm').style.display='none'">Register</button>
+    
+  <div class="container" style="text-align: center;">
+    <span class="signup-link">Already have an account? <a href="javascript:void(0);" onclick="showLoginForm()">Log in</a></span>
+  </div>
+  <div class="container" style="background-color:#f1f1f1">
+    <button type="submit" onclick="document.getElementById('registerModal').style.display='none'" class="cancelbtn">Cancel</button>
+  </div>
+  </div>
+</form>
+</div>
+
+<div id="forgotPasswordModal" class="modal">
+<form id="forgotPasswordForm" class="modal-content animate">
+  <div class="imgcontainer">
+    <span onclick="document.getElementById('forgotPasswordModal').style.display='none'" class="close" title="Close Modal">&times;</span>
+    <img src="user logo.jpg" alt="Avatar" class="avatar">
+  </div>
+
+  <div class="container">
+    <label for="Email"><b>Email</b></label>
+    <input type="text" placeholder="Enter Email" name="Email" id="Email" required>
+
+    <button type="loginSignupbtn" onclick="document.getElementById('forgotPasswordForm').style.display='none'">Reset Password</button>
+    
+  <div class="container" style="text-align: center;">
+    <span class="signup-link">Don't have an account? <a href="javascript:void(0);" onclick="showRegisterForm()">Sign Up</a></span>
+    <br><br>
+    <span class="signup-link">Already have an account? <a href="javascript:void(0);" onclick="showLoginForm()">Log in</a></span>
+  </div>
+
+  <div class="container" style="background-color:#f1f1f1">
+    <button type="button" onclick="document.getElementById('forgotPasswordModal').style.display='none'" class="cancelbtn">Cancel</button>
+  </div>
+  </div>
+</form>
+</div>
+
+
+
+<h3 style=" text-align: center;"> Keep yourself updated with the latest news!</h3>
+<div id="container">
+
+
+
+  <div style="margin-left: 5%;" id="news-container" class="row">
+    
+      
+        <div class="col-md-4">
+          <div class="card">
+            <img src="hto.58960474e714c_2480/master/4128.jpg?width=300&quality=85&auto=format&fit=max&s=fc7c8c313fe8279bb2fa1ea74c5fb5cc" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">How to Blow Up a Pipeline: an eco-thriller Australia urgently needs</h5>
+              <p class="card-text">undefined</p>
+              <a href="https://om/film/2024/mar/13/how-to-blow-up-a-pipeline-an-eco-thriller-australia-urgently-needs" class="btn custom-btn" target="_blank">Read More</a>
+            </div>
+          </div>
+        </div>
+      
+        <div class="col-md-4">
+          <div class="card">
+            <img src="https://i.guim.co000259e2c3c302af94fa4ebb3f9ee197d8/0_186_5568_3341/master/5568.jpg?width=300&quality=85&auto=format&fit=max&s=76cffb62d0acf27f6315e45a6fa0f712" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Swedish police forcibly remove Greta Thunberg from parliament entrance</h5>
+              <p class="card-text">undefined</p>
+              <a href="https:/mar/12/swedish-police-forcibly-remove-greta-thunberg-parliament-climate-protest" class="btn custom-btn" target="_blank">Read More</a>
+            </div>
+          </div>
+        </div>
+      
+        <div class="col-md-4">
+          <div class="card">
+            <img src="https://imageholdent/uploads/the-guardian-logo-black-square.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Greta Thunberg dragged by police from climate protest outside Swedish parliament – video</h5>
+              <p class="card-text">undefined</p>
+              <a href="https://www.theguardian.com/environment/video/2024/mar/12/greta-thunberg-dragged-by-police-from-climate-protest-outside-swedish-parliament-video" class="btn custom-btn" target="_blank">Read More</a>
+            </div>
+          </div>
+        </div>
+      
+        <div class="col-md-4">
+          <div class="card">
+            <img src="https://imageholder.org/wp-content/uploads/the-guardian-logo-black-square.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Australian sport runs financial and legal risks due to climate inaction, new report warns</h5>
+              <p class="card-text">undefined</p>
+              <a href="https://www.theguardian.com/sport/2024/mar/13/australian-sport-climate-inaction-risks-report-data-environmental-defenders-office" class="btn custom-btn" target="_blank">Read More</a>
+            </div>
+          </div>
+        </div>
+      
+        <div class="col-md-4">
+          <div class="card">
+            <img src="https://imageholder.org/wp-content/uploads/the-guardian-logo-black-square.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Tornadoes, shrinking ice and early syrup: how hottest winter hit the US</h5>
+              <p class="card-text">undefined</p>
+              <a href="https://www.theguardian.com/world/2024/mar/12/us-record-breaking-hottest-winter" class="btn custom-btn" target="_blank">Read More</a>
+            </div>
+          </div>
+        </div>
+      
+        <div class="col-md-4">
+          <div class="card">
+            <img src="https://imageholder.org/wp-content/uploads/the-guardian-logo-black-square.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">No big North Sea fossil fuel country has plan to stop drilling in time for 1.5C goal</h5>
+              <p class="card-text">undefined</p>
+              <a href="https://www.theguardian.com/environment/2024/mar/12/no-big-north-sea-fossil-fuel-nation-plan-stop-drilling-global-heating" class="btn custom-btn" target="_blank">Read More</a>
+            </div>
+          </div>
+        </div>
+      
+        <div class="col-md-4">
+          <div class="card">
+            <img src="https://imageholder.org/wp-content/uploads/the-guardian-logo-black-square.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Newly elected leaders to be held to same climate obligations, says Cop29 chief</h5>
+              <p class="card-text">undefined</p>
+              <a href="https://www.theguardian.com/environment/2024/mar/12/newly-elected-leaders-climate-obligations-cop29-chief-un-summit-mukhtar-babayev" class="btn custom-btn" target="_blank">Read More</a>
+            </div>
+          </div>
+        </div>
+      
+        <div class="col-md-4">
+          <div class="card">
+            <img src="https://imageholder.org/wp-content/uploads/the-guardian-logo-black-square.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">On the Great Barrier Reef and in denial: some would rather get crabby than face the facts</h5>
+              <p class="card-text">undefined</p>
+              <a href="https://www.theguardian.com/commentisfree/picture/2024/mar/12/on-the-great-barrier-reef-and-in-denial-some-would-rather-get-crabby-than-face-the-facts" class="btn custom-btn" target="_blank">Read More</a>
+            </div>
+          </div>
+        </div>
+      
+        <div class="col-md-4">
+          <div class="card">
+            <img src="https://imageholder.org/wp-content/uploads/the-guardian-logo-black-square.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Critically endangered stonefly with ‘remarkable’ lifespan faces extinction as Victorian government decision condemned</h5>
+              <p class="card-text">undefined</p>
+              <a href="https://www.theguardian.com/environment/2024/mar/12/critically-endangered-mount-donna-buang-wingless-stonefly-victoria-government-extinction" class="btn custom-btn" target="_blank">Read More</a>
+            </div>
+          </div>
+        </div>
+      </div>
+</div>
+<hr>
+
+<style>
+
+.h3{
+  text-align: center;
+}
+#container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 10%; /* Use 100% of the viewport height */
+  padding: 0 15%; /* Add space on the sides */
+}
+.card {
+  width: 75%;
+  height: 90%;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.card-img-top {
+  height: 150px; /* Set a fixed height for the card images */
+  object-fit: cover; /* Ensure the image covers the entire space */
+}
+
+.card-text {
+  height: 10%;
+  width: 50%;
+  white-space: nowrap; /* Prevent text from wrapping */
+  overflow: hidden; /* Hide overflowing text */
+  text-overflow: ellipsis; /* Display ellipsis for truncated text */
+  max-width: calc(100% - 2rem); /* Limit the maximum width of the text */
+}
+
+</style>
+
+<div class="ContactDetails">
+  <h4>Follow Us</h4>
+  <a href="https://www.instagram.com/"><p>Instagram</p></a>
+  <a href= "https://www.facebook.com/"><p> Facebook</p></a>
+  <a href="https://twitter.com/"><p>Twitter</p></a>
+
+
+</div>
+<br>
+
+<div class="footer">
+  <a href="#" id="scrollToBottom">Contact Details</a>
+</div>
+
+</body>
+</html>

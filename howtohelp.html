@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Title</title>
+  <link rel="stylesheet" href="main.css">
+  <link rel="stylesheet" href="my.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+</head>
+
+<body>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> <!-- Include jQuery -->
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script> <!-- Include Bootstrap JavaScript -->
+
+  <!-- Your custom JavaScript -->
+  <script type="module" src="login.js"></script>
+  <script src="carbonFootprintcalc.js"></script>
+
+
+  <nav class="navbar navbar-expand-lg ">
+    <img src="logo.png" alt="logo" class="navbar-brand" style="width: 12%;" href="">
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span style="background-image: url('hamburgericon.png'); " class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="main.html">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="quiz.html">Quizzes</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="news.html">News</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="discussion.html">Discussion Forum</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="howtohelp.html">How to Help</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle"  id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Choose A Topic
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="risingsea.html">Rising Sea Levels</a>
+            <a class="dropdown-item" href="airpollution.html">Air Pollution</a>
+            <a class="dropdown-item" href="recycling.html">Recycling</a>
+
+          </div>
+        </li>
+      </ul>
+
+      <button id="loginSignupButton" class="btn btn-outline-light" onclick="document.getElementById('loginSignup').style.display='block'">Login / Sign up</button>
+
+      <div id="userProfile" class="nav-item dropdown">
+        <i class="fa fa-user profile-icon" style="font-size:35px;" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></i>
+        <div class="dropdown-menu" id="userProfileDropdown">
+            <a class="dropdown-item" href="#" id="logoutLink">Logout</a>
+            <a class="dropdown-item" href="settings.html">Settings</a>
+            <a class="dropdown-item" href="progresstracker.html">Progress Tracker</a>
+        </div>
+      </div>
+
+      </div>
+    </div>
+  </nav>
+
+    
+  <style>
+     html,body {
+      background-image: url('backdrop.png');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+        }   
+
+        .card{
+          width: 95%;
+          height: 80%;
+          
+        }
+
+
+      </style>
+
+
+    
+  <script>
+    // Show registration formhi
+    function showRegisterForm() {
+      document.getElementById('loginSignup').style.display = 'none';
+      document.getElementById('registerModal').style.display = 'block';
+      document.getElementById('forgotPasswordModal').style.display = 'none';
+    }
+  
+    // Show login form
+    function showLoginForm() {
+      document.getElementById('registerModal').style.display = 'none';
+      document.getElementById('loginSignup').style.display = 'block';
+      document.getElementById('forgotPasswordModal').style.display = 'none';
+  
+    }
+    //show forgot password form
+    function showforgotPasswordForm() {
+    document.getElementById('registerModal').style.display = 'none';
+    document.getElementById('loginSignup').style.display = 'none';
+    document.getElementById('forgotPasswordModal').style.display = 'block';
+    }
+  </script>
+   <!-- Login Modal -->
+    <div id="loginSignup" class="modal">
+    <form id="loginForm" class="modal-content animate">
+    <div class="imgcontainer">
+        <span onclick="document.getElementById('loginSignup').style.display='none'" class="close" title="Close Modal">&times;</span>
+        <img src="user logo.jpg" alt="Avatar" class="avatar">
+    </div>
+
+    <div class="container">
+        <label for="uname"><b>Email</b></label>
+        <input type="text" placeholder="Enter Username" id="uname" required>
+
+        <label for="psw"><b>Password</b></label>
+        <input type="password" placeholder="Enter Password" id="psw" required>
+
+        <button id="loginButton" class="button" onclick="document.getElementById('loginForm').style.display='none'">Login</button>
+        <label>
+        <input type="checkbox" checked="checked" name="remember"> Remember me
+        <span class="psw">Forgot <a href="javascript:void(0);" onclick="showforgotPasswordForm()">password?</a></span>
+
+        </label>
+    </div>
+
+    <div class="container" style="text-align: center;">
+        <span class="signup-link">Don't have an account? <a href="javascript:void(0);" onclick="showRegisterForm()">Sign Up</a></span>
+
+    </div>
+    <div class="container" style="background-color:#f1f1f1">
+        <button type="button" onclick="document.getElementById('loginSignup').style.display='none'" class="cancelbtn">Cancel</button>
+    </div>
+    </form>
+    </div>
+
+<!-- Registration Modal -->
+<div id="registerModal" class="modal">
+<form id="registerForm" class="modal-content animate">
+  <div class="imgcontainer">
+    <span onclick="document.getElementById('registerModal').style.display='none'" class="close" title="Close Modal">&times;</span>
+    <img src="user logo.jpg" alt="Avatar" class="avatar">
+  </div>
+
+  <div class="container">
+    <label for="regEmail"><b>Email</b></label>
+    <input type="text" placeholder="Enter Email" name="regEmail" id="regEmail" required>
+
+    <label for="regUname"><b>Username</b></label>
+    <input type="text" placeholder="Enter Username"  name="regUname" id="regUname" required>
+
+    <label for="regPassword"><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" name="regPassword" id="regPassword" required>
+
+    <button id="registerButton" class="button" onclick="document.getElementById('registerForm').style.display='none'">Register</button>
+    
+  <div class="container" style="text-align: center;">
+    <span class="signup-link">Already have an account? <a href="javascript:void(0);" onclick="showLoginForm()">Log in</a></span>
+  </div>
+  <div class="container" style="background-color:#f1f1f1">
+    <button type="submit" onclick="document.getElementById('registerModal').style.display='none'" class="cancelbtn">Cancel</button>
+  </div>
+  </div>
+</form>
+</div>
+
+<div id="forgotPasswordModal" class="modal">
+<form id="forgotPasswordForm" class="modal-content animate">
+  <div class="imgcontainer">
+    <span onclick="document.getElementById('forgotPasswordModal').style.display='none'" class="close" title="Close Modal">&times;</span>
+    <img src="user logo.jpg" alt="Avatar" class="avatar">
+  </div>
+
+  <div class="container">
+    <label for="Email"><b>Email</b></label>
+    <input type="text" placeholder="Enter Email" name="Email" id="Email" required>
+
+    <button type="loginSignupbtn" onclick="document.getElementById('forgotPasswordForm').style.display='none'">Reset Password</button>
+    
+  <div class="container" style="text-align: center;">
+    <span class="signup-link">Don't have an account? <a href="javascript:void(0);" onclick="showRegisterForm()">Sign Up</a></span>
+    <br><br>
+    <span class="signup-link">Already have an account? <a href="javascript:void(0);" onclick="showLoginForm()">Log in</a></span>
+  </div>
+
+  <div class="container" style="background-color:#f1f1f1">
+    <button type="button" onclick="document.getElementById('forgotPasswordModal').style.display='none'" class="cancelbtn">Cancel</button>
+  </div>
+  </div>
+</form>
+</div>
+
+<iframe  title="calculateCarbonFootprint" style="height: 730px; width: 85%; margin-left: 7.5%; margin-top: 1%;" src="https://sustainabletravel.org/wp-content/plugins/sti_client/src/shortcode/shortcode.php?api_key=STIKEY_66153541b1fe5704608789&primary_color=%23444441&secondary_color=%23ffa21f&light_primary_color=%23ffffff&sort_order=Flight%2CCar%2CBoat"></iframe>
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-md-4">
+      <div  class="card mb-3">
+        <img src="350.org.png"  class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">350.org</h5>
+          <p class="card-text">An international movement focused on addressing the climate crisis through grassroots organizing and mass mobilization.</p>
+          <a style="margin-left: 30%;" href="https://350.org/" class="btn custom-btn">Visit Website</a>
+        </div>
+      </div>
+    </div>
+    
+    <div class="col-md-4">
+      <div class="card mb-3">
+        <img src="Climate-Reality-Project-Logo.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Climate Reality Project</h5>
+          <p class="card-text">Founded by former Vice President Al Gore, this organization focuses on climate education, advocacy, and supporting solutions to the climate crisis.</p>
+          <a style="margin-left: 30%;" href="https://www.climaterealityproject.org/" class="btn custom-btn">Visit Website</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="card mb-3">
+        <img src="wwfLogo.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">world wild life</h5>
+          <p class="card-text">Founded by Sir Julian Huxley, Max Nicholson, Peter Scott, Guy Mountfort, Victor Stolan, and others on September 11, 1961. It was established as an international organization committed to wildlife conservation and the reduction of human impact on the environment.</p>
+          <a style="margin-left: 30%;" href="https://www.worldwildlife.org/" class="btn custom-btn">Visit Website</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="card mb-3">
+        <img src="greenpeaceLogo.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Green Peace</h5>
+          <p class="card-text">Founded by Irving Stowe and Dorothy Stowe, along with a group of activists, in Vancouver, Canada, in 1971. The organization was initially established to protest nuclear testing in Alaska but has since become known for its environmental activism on various issues, including climate change, deforestation, and ocean pollution.</p>
+          <a style="margin-left: 30%;" href="https://www.greenpeace.org/global/" class="btn custom-btn">Visit Website</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="card mb-3">
+        <img src="sierraclubLogo.png" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Sierra Club</h5>
+          <p class="card-text">The Sierra Club was founded by John Muir in 1892. John Muir was a Scottish-American naturalist, author, environmental philosopher, and early advocate for the preservation of wilderness in the United States. He founded the Sierra Club as a conservation organization dedicated to protecting the natural environment, particularly in the Sierra Nevada mountains of California.</p>
+          <a style="margin-left: 30%;" href="https://www.sierraclub.org/" class="btn custom-btn">Visit Website</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="card mb-3">
+        <img src="NatureConservatoryLogo.png" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Nature.org</h5>
+          <p class="card-text">Founded by ecologist Richard Pough, Lawrence Rockefeller, and other conservationists in 1951. The organization is dedicated to protecting ecologically important lands and waters for nature and people. It works on various conservation projects globally, including climate change mitigation and biodiversity preservation.          </p>
+          <a style="margin-left: 30%;" href="https://www.nature.org/en-us/" class="btn custom-btn">Visit Website</a>
+        </div>
+      </div>
+    </div>
+
+
+
+    <div class="col-md-4">
+      <div class="card mb-3">
+        <img src="voicelogo.png" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">VoiceIreland</h5>
+          <p class="card-text">VOICE is an Irish environmental charity dedicated to advancing sustainable living and waste reduction through advocacy, campaigns, and educational programs, empowering communities to protect the environment.</p>
+          <a style="margin-left: 30%;" href="https://www.voiceireland.org/" class="btn custom-btn">Visit Website</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="card mb-3">
+        <img src="repaklogo.png" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Repak</h5>
+          <p class="card-text">Repak is an industry-funded recycling scheme in Ireland, supporting businesses in meeting packaging recycling obligations and promoting sustainable waste management practices nationwide.</p>
+          <a style="margin-left: 30%;" href="https://repak.ie/" class="btn custom-btn">Visit Website</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="card mb-3">
+        <img src="mywastelogo.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Mywaste</h5>
+          <p class="card-text">MyWaste is an Environmental Protection Agency initiative providing comprehensive resources and guidance on waste prevention, recycling, and composting for households and businesses in Ireland.</p>
+          <a style="margin-left: 30%;" href="https://www.mywaste.ie/" class="btn custom-btn">Visit Website</a>
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+</div>
+  
+
+
+<!--
+  <form id="carbonFootprintForm">
+      <label for="footprintType">Choose the type of carbon footprint:</label>
+      <select id="footprintType" onchange="showOptions()">
+          <option value="select" selected disabled>Select</option>
+          <option value="publicTransport">Public Transport</option>
+          <option value="personalCar">Personal Car</option>
+          <option value="motorbike">Motorbike</option>
+          <option value="flight">Flight</option>
+          <option value="fuelToCarbon">Fuel to Carbon</option>
+          <option value="cleanEnergy">Clean Energy</option>
+      </select>
+  
+      <div id="additionalQuestions"></div>
+  
+      <button type="button" onclick="calculateCarbonFootprint()">Calculate Carbon Footprint</button>
+  </form>
+-->
+
+  
+
+</body>
+
+
+
+ 
+
+
+<hr>
+<div style="margin-top: 500px;" class="ContactDetails">
+  <h4>Follow Us</h4>
+  <a href="https://www.instagram.com/"><p>Instagram</p></a>
+  <a href= "https://www.facebook.com/"><p> Facebook</p></a>
+  <a href="https://twitter.com/"><p>Twitter</p></a>
+
+
+</div>
+<br>
+
+<div class="footer">
+  <a href="#" id="scrollToBottom">Contact Details</a>
+</div>
+
+</html>

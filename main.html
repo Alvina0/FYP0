@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Title</title>
+
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="my.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> <!-- Include jQuery -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script> <!-- Include Bootstrap JavaScript -->
+
+    <!-- Your custom JavaScript -->
+    <script type="module" src="login.js"></script>
+
+
+  <script>
+    // Show registration formhi
+    function showRegisterForm() {
+      document.getElementById('loginSignup').style.display = 'none';
+      document.getElementById('registerModal').style.display = 'block';
+      document.getElementById('forgotPasswordModal').style.display = 'none';
+    }
+  
+    // Show login form
+    function showLoginForm() {
+      document.getElementById('registerModal').style.display = 'none';
+      document.getElementById('loginSignup').style.display = 'block';
+      document.getElementById('forgotPasswordModal').style.display = 'none';
+  
+    }
+    //show forgot password form
+    function showforgotPasswordForm() {
+    document.getElementById('registerModal').style.display = 'none';
+    document.getElementById('loginSignup').style.display = 'none';
+    document.getElementById('forgotPasswordModal').style.display = 'block';
+    }
+  </script>
+
+  <nav class="navbar navbar-expand-lg ">
+    <img src="logo.png" alt="logo" class="navbar-brand" style="width: 12%;" href="">
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span style="background-image: url('hamburgericon.png'); " class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="main.html">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="quiz.html">Quizzes</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="news.html">News</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="discussion.html">Discussion Forum</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="howtohelp.html">How to Help</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle"  id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Choose A Topic
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="risingsea.html">Rising Sea Levels</a>
+            <a class="dropdown-item" href="airpollution.html">Air Pollution</a>
+            <a class="dropdown-item" href="recycling.html">Recycling</a>
+
+          </div>
+        </li>
+      </ul>
+
+      <button id="loginSignupButton" class="btn btn-outline-light" onclick="document.getElementById('loginSignup').style.display='block'">Login / Sign up</button>
+
+      <div id="userProfile" class="nav-item dropdown">
+        <i class="fa fa-user profile-icon" style="font-size:35px;" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></i>
+        <div class="dropdown-menu" id="userProfileDropdown">
+            <a class="dropdown-item" href="#" id="logoutLink">Logout</a>
+            <a class="dropdown-item" href="settings.html">Settings</a>
+            <a class="dropdown-item" href="progresstracker.html">Progress Tracker</a>
+        </div>
+      </div>
+
+      </div>
+    </div>
+  </nav>
+  
+  <style>
+    body {
+      /* Set background image */
+      background-image: url('backdrop.png');
+      /* Set background image size to cover the entire page */
+      background-size: cover;
+      /* Center the background image */
+      background-position: center;
+      /* Fix the background image to prevent it from scrolling with the content */
+      background-attachment: fixed;
+    }
+    /* Add additional styles as needed */
+  </style>
+
+    
+
+
+  </div>
+
+
+      
+
+  </div>
+  <script>
+    // Function to toggle dropdown content visibility
+    function toggleDropdown() {
+        var dropdownContent = document.getElementById("myDropdown");
+        if (dropdownContent.style.display === "block") {
+            dropdownContent.style.display = "none";
+        } else {
+            dropdownContent.style.display = "block";
+        }
+    }
+  </script>
+
+  <!-- Login Modal -->
+  <div id="loginSignup" class="modal">
+    <form id="loginForm" class="modal-content animate">
+      <div class="imgcontainer">
+        <span onclick="document.getElementById('loginSignup').style.display='none'" class="close" title="Close Modal">&times;</span>
+        <img src="user logo.jpg" alt="Avatar" class="avatar">
+      </div>
+
+      <div class="container">
+        <label for="uname"><b>Email</b></label>
+        <input type="text" placeholder="Enter Username" id="uname" required>
+
+        <label for="psw"><b>Password</b></label>
+        <input type="password" placeholder="Enter Password" id="psw" required>
+
+        <button id="loginButton" class="button" onclick="document.getElementById('loginForm').style.display='none'">Login</button>
+        <label>
+          <input type="checkbox" checked="checked" name="remember"> Remember me
+          <span class="psw">Forgot <a href="javascript:void(0);" onclick="showforgotPasswordForm()">password?</a></span>
+
+        </label>
+      </div>
+
+      <div class="container" style="text-align: center;">
+        <span class="signup-link">Don't have an account? <a href="javascript:void(0);" onclick="showRegisterForm()">Sign Up</a></span>
+
+      </div>
+      <div class="container" style="background-color:#f1f1f1">
+        <button type="button" onclick="document.getElementById('loginSignup').style.display='none'" class="cancelbtn">Cancel</button>
+      </div>
+    </form>
+  </div>
+
+  <!-- Registration Modal -->
+  <div id="registerModal" class="modal">
+    <form id="registerForm" class="modal-content animate">
+      <div class="imgcontainer">
+        <span onclick="document.getElementById('registerModal').style.display='none'" class="close" title="Close Modal">&times;</span>
+        <img src="user logo.jpg" alt="Avatar" class="avatar">
+      </div>
+
+      <div class="container">
+        <label for="regEmail"><b>Email</b></label>
+        <input type="text" placeholder="Enter Email" name="regEmail" id="regEmail" required>
+
+        <label for="regUname"><b>Username</b></label>
+        <input type="text" placeholder="Enter Username"  name="regUname" id="regUname" required>
+
+        <label for="regPassword"><b>Password</b></label>
+        <input type="password" placeholder="Enter Password" name="regPassword" id="regPassword" required>
+
+        <button id="registerButton" class="button" onclick="document.getElementById('registerForm').style.display='none'">Register</button>
+        
+      <div class="container" style="text-align: center;">
+        <span class="signup-link">Already have an account? <a href="javascript:void(0);" onclick="showLoginForm()">Log in</a></span>
+      </div>
+      <div class="container" style="background-color:#f1f1f1">
+        <button type="submit" onclick="document.getElementById('registerModal').style.display='none'" class="cancelbtn">Cancel</button>
+      </div>
+      </div>
+    </form>
+  </div>
+
+  <div id="forgotPasswordModal" class="modal">
+    <form id="forgotPasswordForm" class="modal-content animate">
+      <div class="imgcontainer">
+        <span onclick="document.getElementById('forgotPasswordModal').style.display='none'" class="close" title="Close Modal">&times;</span>
+        <img src="user logo.jpg" alt="Avatar" class="avatar">
+      </div>
+    
+      <div class="container">
+        <label for="Email"><b>Email</b></label>
+        <input type="text" placeholder="Enter Email" name="Email" id="Email" required>
+
+        <button type="loginSignupbtn" onclick="document.getElementById('forgotPasswordForm').style.display='none'">Reset Password</button>
+        
+      <div class="container" style="text-align: center;">
+        <span class="signup-link">Don't have an account? <a href="javascript:void(0);" onclick="showRegisterForm()">Sign Up</a></span>
+        <br><br>
+        <span class="signup-link">Already have an account? <a href="javascript:void(0);" onclick="showLoginForm()">Log in</a></span>
+      </div>
+
+      <div class="container" style="background-color:#f1f1f1">
+        <button type="button" onclick="document.getElementById('forgotPasswordModal').style.display='none'" class="cancelbtn">Cancel</button>
+      </div>
+      </div>
+    </form>
+  </div>
+    
+
+  <div class="slideshow">
+    <img alt="pic" class="image" src="PolarBear.jpg">
+    <img alt="pic" class="image" src="airpollution3.png">
+    <img alt="pic" class="image" src="recycling2.png">
+  </div>
+  <br>
+  <hr>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+        <div style="width: 95%;" class="card">
+          <img src="Untitled design.png" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Rising Sea Levels</h5>
+            <p class="card-text">Click here to learn about Rising Sea Levels!</p>
+            <a style="margin-left: 25%;" href="risingsea.html" class="btn custom-btn">Learn More</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div style="width: 95%;" class="card">
+          <img src="air.png" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Air Pollution</h5>
+            <p class="card-text">Click here to learn about Air Pollution!</p>
+            <a style="margin-left: 25%;" href="airpollution.html" class="btn custom-btn">Learn More</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div style="width: 95%;" class="card">
+          <img src="recycling.png" class="card-img-top" alt="...">
+          <div  class="card-body">
+            <h5 class="card-title">Recycling</h5>
+            <p class="card-text">Click here to learn about Recycling!</p>
+            <a style="margin-left: 25%;" href="recycling.html" class="btn custom-btn">Learn More</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <br>
+  <hr>
+  
+  <video autoplay muted loop id="myVideo" style="margin-top: 5%; width: 120%;">
+    <source src="Plastik.mov" >
+    
+  </video>
+  
+  <div class="content">
+    <h3>PLASTIK: A short film</h3>
+    <p>Watch this brief video to gain insight into the importance of recycling and environmental conservation. Enjoy!</p>
+    <button id="myBtn" onclick="myFunction()">Pause</button>
+    <button id="myBtn2" onclick="toggleSound()">Mute/Unmute</button>
+
+  </div>
+  
+  <hr>
+  <div   class="imagetextbox">
+    <img style= "border: 2px solid #000; border-radius: 10px;" src="readnews.png" alt="Fossil Fuel Image">
+    <div class="text">
+      <h2>News Feed</h2>
+      <p>Eager to read about the latest news on our environment?</p>
+      <a href="news.html" class="btn custom-btn">Read Articles</a>
+
+    </div>
+  </div>
+
+  <div class="imagetextbox2">
+    <img style="  border: 2px solid #000; border-radius: 10px;" src="howcanihelp.png" alt="Fossil Fuel Image">
+
+    <div  class="text">
+      <h2>How you can help</h2>
+      <p>Learn multiple ways in which you can make an impact</p>
+      <a href="howtohelp.html" class="btn custom-btn">Learn More</a>
+
+    </div>
+  </div>
+ 
+  
+
+
+  <script>
+    var video = document.getElementById("myVideo");
+    var btn = document.getElementById("myBtn");
+    var btn2 = document.getElementById("myBtn2");
+
+    function myFunction() {
+      if (video.paused) {
+        video.play();
+        btn.innerHTML = "Pause";
+      } else {
+        video.pause();
+        btn.innerHTML = "Play";
+      }
+    }
+    function toggleSound() {
+    if (video.muted) {
+      video.muted = false;
+      btn2.innerHTML = "Mute";
+    } else {
+      video.muted = true;
+      btn2.innerHTML = "Unmute";
+    }
+  }
+    </script>
+<style>
+#myVideo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures the video covers the entire container without stretching */
+}
+
+.content {
+
+  position: relative;
+  bottom: 150px;
+  background: rgba(0, 0, 0, 0.5);
+  color: #f1f1f1;
+  width: 100%;
+  padding: 20px;
+}
+
+#myBtn {
+  position: absolute;
+  bottom: 150px; /* Adjust to move the button below the text */
+  left: 20px; /* Adjust as needed */
+  width: 200px;
+  font-size: 18px;
+  padding: 10px;
+  border: none;
+  background: #000;
+  color: #fff;
+  cursor: pointer;
+}
+
+#myBtn2 {
+  position: absolute;
+  bottom: 150px; /* Adjust to move the button below the text */
+  left: 240px; /* Adjust as needed */
+  width: 200px;
+  font-size: 18px;
+  padding: 10px;
+  border: none;
+  background: #000;
+  color: #fff;
+  cursor: pointer;
+}
+
+
+#myBtn:hover {
+  background: #ddd;
+  color: black;
+}
+#myBtn2:hover{
+    background: #ddd;
+  color: black;
+}
+</style>
+
+  <br>
+  <hr>
+
+
+
+  <H2 style="margin-left: 33%;">Check out our Discussion Forum</H2>
+  <div class="container">
+  <div class="row">
+    <!-- First comment -->
+    <div class="col-md-4">
+      <div style="width: 85%; height: 85%;" class="card mb-3">
+        <div  class="card-body">
+          <div class="d-flex flex-row align-items-center">
+            <img src="user logo.jpg" class="rounded-circle" width="50" height="50" alt="User Profile Image">
+            <div class="ml-3">
+              <h5 class="card-title">Alwin</h5>
+              <p class="card-text">Let's plan a beach clean up</p>
+            </div>
+          </div>
+
+          <a style="margin-left: 30%;" href="discussion.html" class="btn custom-btn">Reply</a>
+          <!-- You can add additional elements for displaying like/dislike counts -->
+        </div>
+      </div>
+    </div>
+    <!-- Second comment -->
+    <div class="col-md-4">
+      <div style="width: 85%; height: 85%;" class="card mb-3">
+        <div class="card-body">
+          <div class="d-flex flex-row align-items-center">
+            <img src="user logo.jpg" class="rounded-circle" width="50" height="50" alt="User Profile Image">
+            <div class="ml-3">
+              <h5 class="card-title">Sara</h5>
+              <p class="card-text">Theres a podcast I love</p>
+            </div>
+          </div>
+
+          <a style="margin-left: 30%;" href="discussion.html" class="btn custom-btn">Reply</a>
+                  </div>
+      </div>
+    </div>
+    <!-- Third comment -->
+    <div class="col-md-4">
+      <div style="width: 85%; height: 85%;" class="card mb-3">
+        <div class="card-body">
+          <div class="d-flex flex-row align-items-center">
+            <img src="user logo.jpg" class="rounded-circle" width="50" height="50" alt="User Profile Image">
+            <div class="ml-3">
+              <h5 class="card-title">Jacob</h5>
+              <p class="card-text">I learnt a new way to recycle cans!</p>
+            </div>
+          </div>
+
+          <a style="margin-left: 30%;" href="discussion.html" class="btn custom-btn">Reply</a>
+                  </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <script>
+    document.querySelectorAll('.btn').forEach(button => {
+      button.addEventListener('mousedown', function() {
+        const likeButton = this.classList.contains('like') ? this : this.nextElementSibling;
+        const dislikeButton = this.classList.contains('dislike') ? this : this.previousElementSibling;
+  
+        likeButton.classList.add('green');
+        dislikeButton.classList.remove('red');
+      });
+    });
+  </script>
+  
+</body>
+
+  
+  <br>
+  <div class="ContactDetails">
+    <h4>Follow Us</h4>
+    <a href="https://www.instagram.com/"><p>Instagram</p></a>
+    <a href= "https://www.facebook.com/"><p> Facebook</p></a>
+    <a href="https://twitter.com/"><p>Twitter</p></a>
+
+
+  </div>
+  <br>
+
+  <div class="footer">
+    <a href="#" id="scrollToBottom">Contact Details</a>
+  </div>
+  
+</html>
